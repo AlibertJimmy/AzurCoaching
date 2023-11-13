@@ -7,7 +7,7 @@ import Dropdown from "../Dropdown/Dropdown";
 
 // Import Style
 import styled from "styled-components";
-import { StyledLink } from "../../utils/Styles";
+import { StyledLink, underLineEffect } from "../../utils/Styles";
 
 import colors from "../../utils/Colors";
 
@@ -50,7 +50,10 @@ const StyledUl = styled.ul`
        }
     }
 `
+const StyledLi = styled.li`
+    ${underLineEffect};
 
+`
 
 
 function SideNav({open, handleCloseBurger}){
@@ -66,10 +69,10 @@ function SideNav({open, handleCloseBurger}){
 
     return(
         <StyledUl open={open}>
-            <li><StyledLink to="/" onClick={handleLinkClick}>Home</StyledLink></li>
+            <StyledLi><StyledLink to="/" onClick={handleLinkClick}>Home</StyledLink></StyledLi>
             {/*<li><DropDown dropdownTitle={dropDownTitle} links={links} linksRender={linksRender}/></li>*/}
-            <li><Dropdown dropDownTitle ={dropDownTitle} options={linksRender} links={links}/></li>
-            <li><StyledLink to="/Contact" onClick={handleLinkClick}>Contact</StyledLink></li>
+            <StyledLi><Dropdown dropDownTitle ={dropDownTitle} options={linksRender} links={links}/></StyledLi>
+            <StyledLi><StyledLink to="/Contact" onClick={handleLinkClick}>Contact</StyledLink></StyledLi>
         </StyledUl>
     )
 }

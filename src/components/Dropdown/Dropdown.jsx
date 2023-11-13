@@ -10,15 +10,16 @@ import { StyledLink, StyledSpanHeader } from '../../utils/Styles';
 
 // Styled components
 const DropdownContainer = styled.div`
-  position: relative;
-  display: inline-block;
+  
+  height: 40px;
 `;
 
 const DropdownContent = styled.div`
   display: ${(props) => (props.open ? 'block' : 'none')};
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 200px;
+  margin-top:12px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 `;
@@ -53,7 +54,7 @@ function Dropdown({ dropDownTitle, options, links }){
   };
 
   return (
-    <DropdownContainer onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+    <DropdownContainer onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} id='dropDown'>
       <StyledSpanHeader>{dropDownTitle}</StyledSpanHeader><DropDownArrow src={ArrowDown} alt="ArrowDown" style={{paddingLeft:'5px'}}/>
       <DropdownContent open={isOpen}>
         {options.map((option, index) => (
