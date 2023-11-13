@@ -1,6 +1,9 @@
 // Import React Libraries
 import React from "react";
 
+// Import compoment
+import DropDown from "../Dropdown/Dropdown";
+
 // Import Style
 import styled from "styled-components";
 import { StyledLink } from "../../utils/Styles";
@@ -55,14 +58,17 @@ function SideNav({open, handleCloseBurger}){
         handleCloseBurger(); // Call the function passed as a prop from Burger component
     }
 
+    const dropDownTitle = 'Services';
+    const links = ['BusinessServices', 'IndividualServices'];
+    const linksRender = ['Business Services', 'Individual Services'];
+
     return(
         <StyledUl open={open}>
             <li><StyledLink to="/" onClick={handleLinkClick}>Home</StyledLink></li>
-            <li><StyledLink to="/BusinessServices" onClick={handleLinkClick}>Business Services</StyledLink></li>
-            <li><StyledLink to="/IndividualServices" onClick={handleLinkClick}>Individual Services</StyledLink></li>
+            <li><DropDown dropdownTitle={dropDownTitle} links={links} linksRender={linksRender}/></li>
             <li><StyledLink to="/Contact" onClick={handleLinkClick}>Contact</StyledLink></li>
         </StyledUl>
     )
 }
 
-export default SideNav
+export default SideNav;

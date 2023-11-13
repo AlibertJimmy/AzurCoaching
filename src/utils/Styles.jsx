@@ -31,4 +31,9 @@ export const StyledLink = styled(Link)`
     ${commonLink}
 `
 
-
+const StyledLi = styled.li`
+    list-style:none;
+`
+export const StyledSpanHeader = styled.span`
+  ${commonLink}
+`
