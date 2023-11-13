@@ -1,90 +1,69 @@
-// Import React Libraries 
-import React, {useState, useEffect,useRef} from "react";
-
-// Import Component
-import DropdownMenu from "./DropdownMenu";
+// Import React Component
+import React, { useState } from 'react';
 
 // Import Assets
-import arrow from '../../assets/icon/arrowDown.png'
-
+import ArrowDown from '../../assets/icon/arrowDown.png'
 
 // Import Style
-import styled from "styled-components";
-import colors from "../../utils/Colors";
-import { StyledSpanHeader } from "../../utils/Styles";
+import styled from 'styled-components';
+import { StyledLink, StyledSpanHeader } from '../../utils/Styles';
 
-// Import Constante
-import { borderWidth } from "../../utils/Constant";
+// Styled components
+const DropdownContainer = styled.div`
+  position: relative;
+  display: inline-block;
+`;
 
+const DropdownContent = styled.div`
+  display: ${(props) => (props.open ? 'block' : 'none')};
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+`;
 
+const DropdownItem = styled.div`
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
 
-const StyledDropdown = styled.div`
+  &:hover {
+    background-color: #f1f1f1;
+  }
+`;
 
-    height: 2rem;
-
-
-    border: ${borderWidth}px solid ${colors.backGroundDropdownMenu};
-    border-radius: 5px;
-
-    div{
-        display:flex;
-        flex-direction: row;
-        align-items:center;
-
-        img{
-            height:10px;
-            width:10px;
-        }
-    }
-
-    
+const DropDownArrow = styled.img`
+  width: 10px;
+  height:10px;
+  padding:0;
+  margin:0;
 `
 
+// Dropdown component
+function Dropdown({ dropDownTitle, options, links }){
+  const [isOpen, setIsOpen] = useState(false);
 
 
-function DropDown({dropdownTitle,links, linksRender}) {
-    const [open, setOpen] = useState(false);
-    const DropdownRef = useRef(null);
 
-    
-    useEffect(() => {
-        // Function to handle clicks outside the component
-        function handleClickOutside(event) {
-            if (DropdownRef.current && !DropdownRef.current.contains(event.target)) {
-                setOpen(false);
-            }
-        }
-        
-        // Add event listener when the component mounts
-        document.addEventListener('click', handleClickOutside);
+  const handleOptionClick = () => {
+    setIsOpen(false);
 
-        // Remove the event listener when the component unmounts
-        return () => {
-            document.removeEventListener('click', handleClickOutside);
-        };
-    }, []);
+  };
 
-    // Function to close the Burger component
-    function handleCloseDropdownMenu(event) {
-        console.log('Event target:', event.target);
-        setOpen(false);
-    }
-    
-    return (
-        <div id='dropDown' ref={DropdownRef} onMouseLeave={() => setOpen(false)}>
-            
-            <StyledDropdown
-                open={open}
-                onClick={() => setOpen(!open)}
-                onMouseEnter={() => setOpen(true)}
-            >
-                <div><StyledSpanHeader>{dropdownTitle}</StyledSpanHeader><img src={arrow} alt="Arrow" /></div>
-            </StyledDropdown>
-            
-            <DropdownMenu open={open} handleClosePrestationMenu={handleCloseDropdownMenu} links={links} linksRender={linksRender}/>
-        </div>
-    );
-}
+  return (
+    <DropdownContainer onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+      <StyledSpanHeader>{dropDownTitle}</StyledSpanHeader><DropDownArrow src={ArrowDown} alt="ArrowDown" style={{paddingLeft:'5px'}}/>
+      <DropdownContent open={isOpen}>
+        {options.map((option, index) => (
+          <DropdownItem key={index} >
+            <StyledLink key={index} to={`/${links[index]}`} onClick={() => handleOptionClick(links(index))}>{option}</StyledLink>
+          </DropdownItem>
+        ))}
+      </DropdownContent>
+    </DropdownContainer>
+  );
+};
 
-
-export default DropDown;
+export default Dropdown;

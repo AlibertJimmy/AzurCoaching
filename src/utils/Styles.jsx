@@ -6,9 +6,14 @@ import styled,{ css } from 'styled-components'
 
 // Impor Colors
 import colors from './Colors';
+import { borderWidth } from './Constant';
 
 export const PageWrapper = styled.div`
 
+`
+
+export const ComponentBorder = css`
+    border: ${borderWidth}px solid black;
 `
 
 const commonWriting = css`
@@ -31,9 +36,9 @@ export const StyledLink = styled(Link)`
     ${commonLink}
 `
 
-const StyledLi = styled.li`
+export const StyledLi = styled.li`
     list-style:none;
 `
 export const StyledSpanHeader = styled.span`
-  ${commonLink}
+  ${commonWriting};
 `

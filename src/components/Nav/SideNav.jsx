@@ -2,7 +2,8 @@
 import React from "react";
 
 // Import compoment
-import DropDown from "../Dropdown/Dropdown";
+import Dropdown from "../Dropdown/Dropdown";
+
 
 // Import Style
 import styled from "styled-components";
@@ -12,6 +13,7 @@ import colors from "../../utils/Colors";
 
 // Import constantes
 import { responsiveWidth } from "../../utils/Constant";
+
 
 
 const StyledUl = styled.ul`
@@ -65,7 +67,8 @@ function SideNav({open, handleCloseBurger}){
     return(
         <StyledUl open={open}>
             <li><StyledLink to="/" onClick={handleLinkClick}>Home</StyledLink></li>
-            <li><DropDown dropdownTitle={dropDownTitle} links={links} linksRender={linksRender}/></li>
+            {/*<li><DropDown dropdownTitle={dropDownTitle} links={links} linksRender={linksRender}/></li>*/}
+            <li><Dropdown dropDownTitle ={dropDownTitle} options={linksRender} links={links}/></li>
             <li><StyledLink to="/Contact" onClick={handleLinkClick}>Contact</StyledLink></li>
         </StyledUl>
     )
