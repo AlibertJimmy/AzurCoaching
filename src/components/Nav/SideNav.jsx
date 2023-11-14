@@ -25,6 +25,7 @@ const StyledUl = styled.ul`
     text-decoration: none;
     color: ${colors.link};
     padding:0;
+    margin-right: 20px;
 
 
     @media (max-width: ${responsiveWidth}px){
@@ -32,19 +33,20 @@ const StyledUl = styled.ul`
 
         position: fixed;
         top: 0;
-        left: 0;
+        right: 0;
         height: 100vh;
         width: 100px;
         padding: 3rem 3rem;
         text-align: left;
         margin-top: 0;
+        margin-right:0;
         gap:1rem;
         
         justify-content: top-start;
         
         background: #ffffff;
 
-        transform: ${({open}) => open ? 'translateX(0)' : 'translateX(-100%)' };
+        transform: ${({open}) => open ? 'translateX(0)' : 'translateX(100%)' };
        li{
             margin-bottom: 0px;
        }

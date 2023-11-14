@@ -6,7 +6,7 @@ import styled,{ css } from 'styled-components'
 
 // Impor Colors
 import colors from './Colors';
-import { borderWidth } from './Constant';
+import { borderWidth, responsiveWidth } from './Constant';
 
 export const PageWrapper = styled.div`
 
@@ -17,43 +17,49 @@ export const ComponentBorder = css`
 `
 
 const commonWriting = css`
-  font-family: "Bradley Hand", cursive;
-  font-style: italic;
+  font-family:  sans-serif;
+  font-weight:bold;
+
+  @media (max-width: ${responsiveWidth}px){
+    color: ${colors.linkResponsive};
+  }
+
 `;
 
 const commonLink = css`
     
-    color: ${colors.link} ;
-    text-decoration: none;
-    
+  color: ${colors.link} ;
+  text-decoration: none;
+  
 
-    &:hover {
-        color: ${colors.linkHover};
-    }
+  &:hover {
+    color: ${colors.linkHover};
+  }
+
+  
     
 `
 
 export const underLineEffect = css`
-display: inline-block;
+    display: inline-block;
     height: 40px;
-position:relative;
-&::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  bottom: 10px;
-  height: 2px; /* Adjust the underline height as needed */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #007bff; /* Set the underline color */
-  transition: width 0.3s ease-out; /* Set the animation duration and easing */
-}
+    position:relative;
 
-/* Hover effect - expand the underline on hover */
-&:hover::after {
-  width: 100%;
-}
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      bottom: 10px;
+      height: 2px; /* Adjust the underline height as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #007bff; /* Set the underline color */
+      transition: width 0.3s ease-out; /* Set the animation duration and easing */
+    }
 
+    &:hover::after {
+      width: 100%;
+    }
 `
 
 
@@ -62,8 +68,14 @@ export const StyledLink = styled(Link)`
     ${commonLink}
 `
 
+export const StyledLinkDropDown = styled(Link)`
+    ${commonWriting};
+    color: ${colors.linkResponsive} ;
+    text-decoration: none;
+`
+
 export const StyledLi = styled.li`
-    list-style:none;
+  list-style:none;
     
   position: relative;
   display: inline-block;

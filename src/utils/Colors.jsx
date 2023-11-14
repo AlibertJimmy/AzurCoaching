@@ -1,7 +1,9 @@
 const colors = 
   {
-    'link': '#000000',
-    'burgerDiv':'#000000'
+    'link': '#ffffff',
+    'linkResponsive': '#000000',
+    'burgerDiv':'#ffffff',
+    'burgerDivOpen':'#000000'
   }
   
   export default colors

@@ -18,9 +18,10 @@ const StyledBurger = styled.div`
 
     position: fixed;
     top: 10px;
-    left: 15px;
+    right: 15px;
+    
+    border: ${({ open }) => (open ? `1px solid ${colors.burgerDivOpen}` : `1px solid ${colors.burgerDiv}`)};
 
-    border: 1px solid ${colors.link};
     border-radius: 5px;
     padding: 2px;
 
@@ -37,7 +38,6 @@ const StyledBurger = styled.div`
     div{
         
         height: 0.25rem;
-        background-color: ${colors.burgerDiv};
         border-radius: 10px;
         
         transform-origin: 1px;
@@ -55,6 +55,8 @@ const StyledBurger = styled.div`
             transform: ${( {open}) => open ? 'translate(14%) rotate(-45deg)' : 'translate(0) rotate(0)'};
         }
 
+        background-color: ${( {open}) => open ? colors.burgerDivOpen : colors.burgerDiv};
+        
 
     }
 `

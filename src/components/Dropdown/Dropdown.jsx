@@ -6,7 +6,7 @@ import ArrowDown from '../../assets/icon/arrowDown.png'
 
 // Import Style
 import styled from 'styled-components';
-import { StyledLink, StyledSpanHeader } from '../../utils/Styles';
+import { StyledLink, StyledLinkDropDown, StyledSpanHeader } from '../../utils/Styles';
 
 // Styled components
 const DropdownContainer = styled.div`
@@ -59,7 +59,7 @@ function Dropdown({ dropDownTitle, options, links }){
       <DropdownContent open={isOpen}>
         {options.map((option, index) => (
           <DropdownItem key={index} >
-            <StyledLink key={index} to={`/${links[index]}`} onClick={() => handleOptionClick(links(index))}>{option}</StyledLink>
+            <StyledLinkDropDown key={index} to={`/${links[index]}`} onClick={() => handleOptionClick(links(index))}>{option}</StyledLinkDropDown>
           </DropdownItem>
         ))}
       </DropdownContent>

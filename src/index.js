@@ -19,14 +19,12 @@ import styled from 'styled-components'
 const HomeWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
   
 `
 
 const ContentWrapper = styled.div`
   
   width: 100%;
-  padding: 20px 0 ;
   
 `
 function App(){

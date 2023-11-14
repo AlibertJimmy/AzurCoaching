@@ -1,21 +1,18 @@
 // Import React Libraries
 
 // Import Component
-
-// Import Datas
+import HomeIllustration from '../../components/HomeIllustration/HomeIllustration';
+// Import Assets
 
 // Import Style
-import { PageWrapper } from "../../utils/Styles"
-
+import styled from 'styled-components';
 
 
 function Home() {
     return (
-          <PageWrapper>
-            
-              
-            
-          </PageWrapper>
+          <div>
+            <HomeIllustration/>
+          </div>
     )
   }
   
