@@ -73,7 +73,7 @@ function OurServices() {
             <ButtonContainer>
                 <Link to='/BusinessServices'>
                     <CustomButton>Discover All Business Services
-                        <span><StyledIMG src={ArrowRight} atl='arrowRight'></StyledIMG></span>
+                        <span><StyledIMG src={ArrowRight} alt='arrowRight'></StyledIMG></span>
                     </CustomButton>
                 </Link>
             </ButtonContainer>
@@ -83,7 +83,7 @@ function OurServices() {
             <ButtonContainer>
                 <Link to='/IndividualServices'>
                     <CustomButton>Discover All Individual Services
-                        <span><StyledIMG src={ArrowRight} atl='arrowRight'></StyledIMG></span>
+                        <span><StyledIMG src={ArrowRight} alt='arrowRight'></StyledIMG></span>
                     </CustomButton>
                 </Link>
             </ButtonContainer>
