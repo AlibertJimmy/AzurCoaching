@@ -1,6 +1,6 @@
-import Accompagnements from '../assets/pictures/Accompagnement.png'
-import Coffee from '../assets/pictures/Coffee.png'
-import Coachings from '../assets/pictures/Coachings.png'
+import Accompagnements from '../assets/icon/Accompagnement.png'
+import Coffee from '../assets/icon/Coffee.png'
+import Coachings from '../assets/icon/Coachings.png'
 
 
 export const iconList = [

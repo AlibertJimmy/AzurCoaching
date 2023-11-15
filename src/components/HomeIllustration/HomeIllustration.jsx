@@ -11,6 +11,9 @@ import { homeTitles } from '../../datas/HomeTitles';
 
 // Import Style
 import styled from 'styled-components';
+import { StyledButton } from '../../utils/Styles';
+
+// Import Constants
 import { borderWidth, responsiveWidth } from '../../utils/Constant';
 
 const IllustrationContainer = styled.div`
@@ -38,18 +41,7 @@ const ScrollingStripPosition = styled.div`
     border: ${borderWidth}px solid black;
 `
 
-const StyledButton = styled.button`
-    background: #5B89B4;
-    color: white;
-    border-radius:5px;
-    border:none;
-    padding: 12px 18px;
-    cursor:pointer;
-    font-weight:600;
-    font-size:12px;
-    margin-top:20px;
-    text-transform: uppercase;
-`
+
 
 
 

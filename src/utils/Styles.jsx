@@ -14,6 +14,7 @@ export const PageWrapper = styled.div`
 
 export const ComponentBorder = css`
     border: ${borderWidth}px solid black;
+    border-radius:15px;
 `
 
 const commonWriting = css`
@@ -82,4 +83,17 @@ export const StyledLi = styled.li`
 `
 export const StyledSpanHeader = styled.span`
   ${commonWriting};
+`
+
+export const StyledButton = styled.button`
+background: #5B89B4;
+color: white;
+border-radius:5px;
+border:none;
+padding: 12px 18px;
+cursor:pointer;
+font-weight:600;
+font-size:12px;
+margin-top:20px;
+text-transform: uppercase;
 `
