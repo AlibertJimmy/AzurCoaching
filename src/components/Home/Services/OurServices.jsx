@@ -11,9 +11,6 @@ import ArrowRight from '../../../assets/icon/arrowRight.png'
 import { IndividualServicesList } from '../../../datas/IndividualServices';
 import { BusinessServicesList } from '../../../datas/BusinessServices';
 
-
-// Import Constants
-import { responsiveWidth } from '../../../utils/Constant' 
 // Import Style
 import styled from 'styled-components'
 import { ComponentBorder, StyledButton } from '../../../utils/Styles';

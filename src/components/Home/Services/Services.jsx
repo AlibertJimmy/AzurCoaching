@@ -1,9 +1,5 @@
 // Import React Libraries
 import { Link } from 'react-router-dom';
-// Import Component
-// Import Datas
-import { IndividualServicesList } from '../../../datas/IndividualServices';
-import { BusinessServicesList } from '../../../datas/BusinessServices';
 
 // Import Constans
 import { responsiveWidth } from '../../../utils/Constant' 
@@ -13,24 +9,19 @@ import { ComponentBorder } from '../../../utils/Styles';
 
 
 const ServicesWrapper = styled.div`
-    
+    ${ComponentBorder};    
     display:flex;
     flex-wrap: wrap;
-    ${ComponentBorder};
-    margin: 20px;
-
-   
+    margin: 20px;   
 `
 
 const ServiceContainer = styled.div`
+    ${ComponentBorder};    
     flex: 0 0 calc(33.33% - 10px);
     display:flex;
-    flex-direction: row;
-    
-    ${ComponentBorder};
+    flex-direction: row;    
     width: 300px;
 
-    
     &:hover{
         img{
             border: 2px solid black;
@@ -41,7 +32,6 @@ const ServiceContainer = styled.div`
     @media (max-width: ${responsiveWidth}px){
         flex: 1 0 calc(50% - 10px);
       }
-    
 `
 
 const IconContainer = styled.div`
@@ -63,8 +53,6 @@ const IconIMG = styled.img`
     border: 2px solid white;
     border-radius:20px;
 `
-
-
 
 const ServiceContentContainer = styled.div`
     display:flex;

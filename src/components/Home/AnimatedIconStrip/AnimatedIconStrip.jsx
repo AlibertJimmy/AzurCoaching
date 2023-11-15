@@ -9,6 +9,7 @@ import { iconList } from '../../../datas/AnimatedIconStrip'
 import { responsiveWidth } from '../../../utils/Constant' 
 // Import Style
 import styled from 'styled-components'
+import colors from '../../../utils/Colors'
 
 
 const IconWrapper = styled.div`
@@ -16,7 +17,7 @@ const IconWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    background-color:#F9F9FA;
+    background-color:${colors.creme};
     padding: 40px 0;
 
     @media (max-width: ${responsiveWidth}px){
