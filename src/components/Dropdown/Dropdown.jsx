@@ -59,7 +59,7 @@ function Dropdown({ dropDownTitle, options, links }){
       <DropdownContent open={isOpen}>
         {options.map((option, index) => (
           <DropdownItem key={index} >
-            <StyledLinkDropDown key={index} to={`/${links[index]}`} onClick={() => handleOptionClick(links(index))}>{option}</StyledLinkDropDown>
+            <StyledLinkDropDown key={index} to={`/${links[index]}`} onClick={() => handleOptionClick(links[index])}>{option}</StyledLinkDropDown>
           </DropdownItem>
         ))}
       </DropdownContent>
