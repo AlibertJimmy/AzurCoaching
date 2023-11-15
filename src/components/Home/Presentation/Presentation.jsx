@@ -10,12 +10,16 @@ import { PresentationContent } from '../../../datas/Presentation';
 
 // Import Style
 import styled from 'styled-components';
-import { profilePicSize } from '../../../utils/Constant';
+import { profilePicSize, profilePicSizeResponsive, responsiveWidth } from '../../../utils/Constant';
 
 const PresentationWrapper = styled.div`
     display: flex;
     align-items:center;
     margin: 20px;
+
+    @media (max-width: ${responsiveWidth}px){
+        flex-direction:column;
+      }
 
 `
 const PresentationTextWrapper = styled.div`
@@ -47,10 +51,18 @@ const StyledPItalic = styled.p`
 `
 
 const StyledIMG = styled.img`
+    margin: 20px;
+
     height: ${profilePicSize}px;
     width: ${profilePicSize}px;
     border-radius: ${profilePicSize/2}px;
-    margin: 20px;
+
+    @media (max-width: ${responsiveWidth}px){
+        height: ${profilePicSizeResponsive}px;
+        width: ${profilePicSizeResponsive}px;
+        border-radius: ${profilePicSizeResponsive/2}px;
+      }
+    
 `
 
 function Presentation() {
