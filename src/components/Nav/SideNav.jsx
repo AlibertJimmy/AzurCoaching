@@ -1,6 +1,5 @@
 // Import React Libraries
 import React from "react";
-import { Link } from "react-router-dom";
 
 // Import compoment
 import Dropdown from "../Dropdown/Dropdown";

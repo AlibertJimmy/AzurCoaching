@@ -11,7 +11,9 @@ import { navHeight } from '../../utils/Constant'
 import Logo from './Logo/Logo'
 import { Link } from 'react-router-dom'
 
-const Nav = styled.nav`
+const BaseNav = ({ className, children }) => <nav className={className}>{children}</nav>;
+
+const StyledNav = styled(BaseNav)`
     position: fixed;
     top:0;
     width:100%;
@@ -57,10 +59,10 @@ function Navbar(){
     }, []);
 
     return (
-        <Nav isScrolled={isScrolled}>
+        <StyledNav isScrolled={isScrolled}>
             <Link to='/'><Logo/></Link>
             <Burger/> 
-        </Nav>
+        </StyledNav>
     )
 
 }

@@ -13,7 +13,10 @@ import styled from 'styled-components';
 
 
 
-const TitleContainer = styled.div`
+//const TitleContainer = styled.div`
+const TitleContainer = ({ className, children }) => <div className={className}>{children}</div>;
+
+const StyledTitleContainer = styled(TitleContainer)`
     ${({ customStyle }) => customStyle &&`
     font-size: ${customStyle.fontSize};
     font-style: ${customStyle.fontStyle};
@@ -57,9 +60,9 @@ function ScrollingStrip({datas, customStyle}){
 
   return (
       <div>
-        <TitleContainer customStyle={customStyle}>
+        <StyledTitleContainer customStyle={customStyle}>
             {datas[currentIndex]}
-        </TitleContainer>
+        </StyledTitleContainer>
         
       </div>
   )
