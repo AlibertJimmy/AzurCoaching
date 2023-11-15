@@ -2,16 +2,17 @@
 
 // Import Component
 import HomeIllustration from '../../components/HomeIllustration/HomeIllustration';
+import Presentation from '../../components/Home/Presentation/Presentation';
 // Import Assets
 
 // Import Style
-import styled from 'styled-components';
 
 
 function Home() {
     return (
           <div>
             <HomeIllustration/>
+            <Presentation/>
           </div>
     )
   }

@@ -6,7 +6,7 @@ import ArrowDown from '../../assets/icon/arrowDown.png'
 
 // Import Style
 import styled from 'styled-components';
-import { StyledLink, StyledLinkDropDown, StyledSpanHeader } from '../../utils/Styles';
+import { StyledLinkDropDown, StyledSpanHeader } from '../../utils/Styles';
 
 // Styled components
 const DropdownContainer = styled.div`

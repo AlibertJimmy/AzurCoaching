@@ -1,5 +1,6 @@
 // Import React Libraries
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Import compoment
 import Dropdown from "../Dropdown/Dropdown";
@@ -9,11 +10,8 @@ import Dropdown from "../Dropdown/Dropdown";
 import styled from "styled-components";
 import { StyledLink, underLineEffect } from "../../utils/Styles";
 
-import colors from "../../utils/Colors";
-
 // Import constantes
 import { responsiveWidth } from "../../utils/Constant";
-
 
 
 const StyledUl = styled.ul`
@@ -23,7 +21,7 @@ const StyledUl = styled.ul`
 
     list-style: none;
     text-decoration: none;
-    color: ${colors.link};
+    
     padding:0;
     margin-right: 20px;
 
@@ -68,11 +66,10 @@ function SideNav({open, handleCloseBurger}){
     const dropDownTitle = 'Services';
     const links = ['BusinessServices', 'IndividualServices'];
     const linksRender = ['Business Services', 'Individual Services'];
-
+    
     return(
         <StyledUl open={open}>
             <StyledLi><StyledLink to="/" onClick={handleLinkClick}>Home</StyledLink></StyledLi>
-            {/*<li><DropDown dropdownTitle={dropDownTitle} links={links} linksRender={linksRender}/></li>*/}
             <StyledLi><Dropdown dropDownTitle ={dropDownTitle} options={linksRender} links={links}/></StyledLi>
             <StyledLi><StyledLink to="/Contact" onClick={handleLinkClick}>Contact</StyledLink></StyledLi>
         </StyledUl>

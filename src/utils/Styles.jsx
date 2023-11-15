@@ -28,9 +28,7 @@ const commonWriting = css`
 
 const commonLink = css`
     
-  color: ${colors.link} ;
   text-decoration: none;
-  
 
   &:hover {
     color: ${colors.linkHover};
@@ -65,7 +63,8 @@ export const underLineEffect = css`
 
 export const StyledLink = styled(Link)`
     ${commonWriting};
-    ${commonLink}
+    ${commonLink};
+    color:inherit;
 `
 
 export const StyledLinkDropDown = styled(Link)`

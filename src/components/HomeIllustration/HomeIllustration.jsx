@@ -12,7 +12,6 @@ import { homeTitles } from '../../datas/HomeTitles';
 // Import Style
 import styled from 'styled-components';
 import { borderWidth, responsiveWidth } from '../../utils/Constant';
-import '../../utils/css/style.css';
 
 const IllustrationContainer = styled.div`
     position: relative;
