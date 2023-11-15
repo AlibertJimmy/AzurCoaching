@@ -1,4 +1,5 @@
 // Import React Libraries
+import {css} from 'styled-components';
 // Import Component
 
 // Import Assets
@@ -32,13 +33,16 @@ const StyledSumUp = styled.h2`
     margin:0;
 `
 
-
-const StyledP = styled.p`
+const CommonP = css`
     font-size: 18px;
 `
 
+const StyledP = styled.p`
+    ${CommonP};
+`
+
 const StyledPItalic = styled.p`
-    font-size: 18px;
+    ${CommonP};
     font-style:italic;
 `
 
