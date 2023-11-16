@@ -32,6 +32,12 @@ const ServiceContainer = styled.div`
         width: 33%; /* Adjust the width based on how much you want to underline */
         border-bottom: 1px solid ${colors.bluePastel}; /* Adjust the color and thickness */
       }
+
+    &:last-child {
+        &:before {
+            content: none; /* Remove the underline effect for the last child */
+        }
+    }
     
     @media (max-width: ${responsiveWidth}px){
     flex-direction:column;
