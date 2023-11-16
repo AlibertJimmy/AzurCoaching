@@ -13,7 +13,7 @@ export const BusinessServicesList = [
             "illustration":Consulting,
             "text":'I provide my help and my expertise to companies in order to achieve their objectives.',
             "link":commonLink,
-            "anchor":''
+            "anchor":'',
         },
         {   
             "title": "Formations",

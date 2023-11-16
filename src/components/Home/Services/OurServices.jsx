@@ -14,6 +14,7 @@ import { BusinessServicesList } from '../../../datas/BusinessServices';
 // Import Style
 import styled from 'styled-components'
 import { ComponentBorder, StyledButton } from '../../../utils/Styles';
+import colors from '../../../utils/Colors';
 
 
 const ServicesWrapper = styled.div`
@@ -24,7 +25,7 @@ const ServicesWrapper = styled.div`
     margin: 20px;
 `
 const CommonTitle = css`
-    color:#5B89B4;
+    color:${colors.bluePastel};
 `
 
 const StyledTitle = styled.h1`
