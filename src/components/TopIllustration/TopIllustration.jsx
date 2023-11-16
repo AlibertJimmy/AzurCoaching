@@ -50,7 +50,7 @@ const StyledTitle = styled.h1`
 `
 
 const StyledText1 = styled.div`
-    font-size:15px;
+    font-size:25px;
         
     font-family:sans-serif;
     font-weight: bold;
@@ -58,11 +58,11 @@ const StyledText1 = styled.div`
     color: white;
 
     @media (max-width: ${responsiveWidth}px) {
-        font-size: 25px;    
+        font-size: 15px;    
     }
 `
 const StyledText2 = styled.div`
-    font-size:20px;
+    font-size:40px;
             
     font-family:sans-serif;
     font-weight: bold;
@@ -73,7 +73,7 @@ const StyledText2 = styled.div`
     margin-top: 20px;
 
     @media (max-width: ${responsiveWidth}px) {
-        font-size: 25px;    
+        font-size: 20px;    
     }
 
 `
