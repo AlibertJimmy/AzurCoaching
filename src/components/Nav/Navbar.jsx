@@ -1,15 +1,20 @@
 // Import React Libraries
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 // Import Component 
 import Burger from './BurgerButton'
+import Logo from './Logo/Logo'
 
 // Import Style
 import styled from 'styled-components'
 import { ComponentBorder } from '../../utils/Styles'
 import { navHeight } from '../../utils/Constant'
-import Logo from './Logo/Logo'
-import { Link } from 'react-router-dom'
+
+// Import Constants
+import { responsiveWidth } from '../../utils/Constant'
+
+
 
 const BaseNav = ({ className, children }) => <nav className={className}>{children}</nav>;
 
@@ -29,6 +34,10 @@ const StyledNav = styled(BaseNav)`
 
     background-color: ${({ isScrolled }) => (isScrolled ? 'white' : 'transparent')};
     color: ${({ isScrolled }) => (isScrolled ? 'black' : 'white')};
+
+    @media (max-width: ${responsiveWidth}px) {
+      position: absolute;
+    }
 
 
 `
