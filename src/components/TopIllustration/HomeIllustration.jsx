@@ -24,8 +24,6 @@ const IllustrationContainer = styled.div`
     background-size: cover;
 `
 
-
-
 const ScrollingStripPosition = styled.div`
     
     position: absolute;
@@ -42,9 +40,6 @@ const ScrollingStripPosition = styled.div`
 `
 
 
-
-
-
 const StyledTitle = styled.h1`
     font-family: sans-serif;
     color: white;
@@ -55,8 +50,6 @@ const StyledTitle = styled.h1`
         
       }
 `
-
-
 
 
 function HomeIllustration() {

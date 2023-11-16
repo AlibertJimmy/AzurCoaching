@@ -1,7 +1,7 @@
 // Import React Libraries
 
 // Import Component
-import HomeIllustration from '../../components/HomeIllustration/HomeIllustration';
+import HomeIllustration from '../../components/TopIllustration/HomeIllustration';
 import Presentation from '../../components/Home/Presentation/Presentation';
 import AnimatedIconStrip from '../../components/Home/AnimatedIconStrip/AnimatedIconStrip';
 import OurServices from '../../components/Home/Services/OurServices';
