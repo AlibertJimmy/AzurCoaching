@@ -84,7 +84,10 @@ function TopIllustration({title, text1, text2}) {
             <IllustrationContainer>
                 <ContentPosition>
                     <StyledTitle>{title}</StyledTitle>
-                    <StyledText1>{text1}</StyledText1>
+                    {text1 ? (
+                        <StyledText1>{text1}</StyledText1>
+                        ) : (null)
+                    }
                     {text2 ? (
                         <StyledText2>{text2}</StyledText2>
                         ) : (null)
