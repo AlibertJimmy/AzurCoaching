@@ -66,6 +66,26 @@ const StyledButton = styled.button`
     width: 200px;
 `
 
+const CommonInput = css`
+    border: 1px solid black;
+    border-radius: 2px;
+    height:25px;
+
+    &:focus {
+        
+        outline: 1px solid #8c8a89;
+    }
+`
+
+const StyledInput = styled.input`
+    ${CommonInput};
+    
+`;
+
+const StyledTextArea = styled.textarea`
+    ${CommonInput};
+`
+
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -162,7 +182,7 @@ function ContactForm() {
             <ContactInfoContainer>
                 <ContactElement>
                     <label htmlFor="name">Name *</label>
-                    <input
+                    <StyledInput
                     type="text"
                     id="name"
                     name="name"
@@ -177,7 +197,7 @@ function ContactForm() {
             <ContactInfoContainer>
                 <ContactElement>
                     <label htmlFor="firstName">First Name *</label>
-                    <input
+                    <StyledInput
                     type="text"
                     id="firstName"
                     name="firstName"
@@ -191,7 +211,7 @@ function ContactForm() {
             <ContactInfoContainer>
                 <ContactElement>
                     <label htmlFor="email">Email *</label>
-                    <input
+                    <StyledInput
                     type="email"
                     id="email"
                     name="email"
@@ -205,7 +225,7 @@ function ContactForm() {
             <ContactInfoContainer>
                 <ContactElement>
                     <label htmlFor="phone">Phone *</label>
-                    <input
+                    <StyledInput
                     type="tel"
                     id="phone"
                     name="phone"
@@ -219,7 +239,7 @@ function ContactForm() {
             <ContactInfoContainer>
                 <ContactElement>
                     <label htmlFor="companie">Companie</label>
-                    <input
+                    <StyledInput
                     type="text"
                     id="companie"
                     name="companie"
@@ -233,7 +253,7 @@ function ContactForm() {
             <ContactInfoContainer>
                 <ContactElement>
                     <label htmlFor="subject">Subject *</label>
-                    <input
+                    <StyledInput
                     type="text"
                     id="subject"
                     name="subject"
@@ -247,7 +267,7 @@ function ContactForm() {
             <ContactInfoContainer>
                 <ContactElementMessage>
                     <label htmlFor="message">Message *</label>
-                    <textarea
+                    <StyledTextArea
                     id="message"
                     name="message"
                     value={formData.message}
