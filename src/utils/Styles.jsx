@@ -85,15 +85,19 @@ export const StyledSpanHeader = styled.span`
   ${commonWriting};
 `
 
+export const ButtonStyle = css`
+  background: #5B89B4;
+  color: white;
+  border-radius:5px;
+  border:none;
+  padding: 12px 18px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:12px;
+  margin-top:20px;
+  text-transform: uppercase;
+`
+
 export const StyledButton = styled.button`
-background: #5B89B4;
-color: white;
-border-radius:5px;
-border:none;
-padding: 12px 18px;
-cursor:pointer;
-font-weight:600;
-font-size:12px;
-margin-top:20px;
-text-transform: uppercase;
+${ButtonStyle};
 `

@@ -2,6 +2,7 @@
 
 // Import Component
 import TopIllustration from "../../components/TopIllustration/TopIllustration"
+import ContactContent from "../../components/Contact/ContactContent";
 import Footer from "../../components/Footer/Footer"
 // Import Datas
 
@@ -16,8 +17,9 @@ function Contact() {
 
       return (
             <PageWrapper>
-            
+                  
                   <TopIllustration title={title}/>
+                  <ContactContent/>
                   <Footer/>
             </PageWrapper>
       )
