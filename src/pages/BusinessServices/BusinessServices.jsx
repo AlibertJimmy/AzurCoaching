@@ -15,7 +15,7 @@ import { PageWrapper } from "../../utils/Styles"
 function BusinessServices() {
 
     const title = 'My Services';
-    const text1 = 'for fompanies';
+    const text1 = 'for companies';
 
       return (
             <PageWrapper>
