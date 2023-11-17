@@ -25,7 +25,7 @@ function BusinessServices() {
                 <Footer/>  
             </PageWrapper>
       )
-      }
+}
   
   export default BusinessServices
   

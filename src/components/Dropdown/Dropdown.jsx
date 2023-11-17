@@ -7,6 +7,7 @@ import ArrowDown from '../../assets/icon/arrowDown.png'
 // Import Style
 import styled from 'styled-components';
 import { StyledLinkDropDown, StyledSpanHeader } from '../../utils/Styles';
+import { scrollToTop } from '../../utils/Functions';
 
 // Styled components
 const DropdownContainer = styled.div`
@@ -50,8 +51,11 @@ function Dropdown({ dropDownTitle, options, links }){
 
   const handleOptionClick = () => {
     setIsOpen(false);
+    scrollToTop();
 
   };
+
+  
 
   return (
     <DropdownContainer onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} id='dropDown'>

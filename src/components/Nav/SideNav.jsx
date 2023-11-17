@@ -11,6 +11,7 @@ import { StyledLink, underLineEffect } from "../../utils/Styles";
 
 // Import constantes
 import { responsiveWidth } from "../../utils/Constant";
+import { scrollToTop } from "../../utils/Functions";
 
 
 const StyledUl = styled.ul`
@@ -59,8 +60,11 @@ function SideNav({open, handleCloseBurger}){
 
 
     function handleLinkClick() {
-        handleCloseBurger(); // Call the function passed as a prop from Burger component
+        handleCloseBurger(); 
+        scrollToTop();
     }
+
+    
 
     const dropDownTitle = 'Services';
     const links = ['BusinessServices', 'IndividualServices'];

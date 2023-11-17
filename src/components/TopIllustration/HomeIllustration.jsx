@@ -15,6 +15,7 @@ import { StyledButton } from '../../utils/Styles';
 
 // Import Constants
 import { borderWidth, responsiveWidth } from '../../utils/Constant';
+import { scrollToTop } from '../../utils/Functions';
 
 const IllustrationContainer = styled.div`
     position: relative;
@@ -66,13 +67,15 @@ function HomeIllustration() {
 
     }
 
+    
+
     return (
             <IllustrationContainer>
                 <ScrollingStripPosition>
                     <StyledTitle>Azur</StyledTitle>
                     
                     <ScrollingStrip datas={homeTitles} customStyle={customStyle}/>
-                    <Link to='/BusinessServices'>
+                    <Link to='/BusinessServices' onClick={scrollToTop}>
                         <StyledButton>Check My Services</StyledButton>
                     </Link>
                     
