@@ -6,6 +6,7 @@ import { responsiveWidth } from '../../utils/Constant'
 import styled from 'styled-components'
 import { ComponentBorder } from '../../utils/Styles';
 import colors from '../../utils/Colors';
+import { useRef } from 'react';
 
 
 const ServicesWrapper = styled.div`
@@ -108,12 +109,13 @@ const StyledUl = styled.ul`
 `
 
 function ServicesDetails({servicesList}) {
+    
     return (
         
           <ServicesWrapper>
             
                     {servicesList.map((service) => (
-                    <ServiceContainer key={service.title}>
+                    <ServiceContainer key={service.title} id={service.anchor}>
                         <LeftDiv>
                             <StyledTitle>{service.title}</StyledTitle>
                         </LeftDiv>

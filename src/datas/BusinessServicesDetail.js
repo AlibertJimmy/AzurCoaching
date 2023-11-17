@@ -3,6 +3,7 @@
 export const BusinessServicesListDetail = [
         {   
             "title": "HR Consulting",
+            "anchor": "HRConsulting",
             "list":
             [
                 {"li":"Support in recruitment and selection;"},
@@ -19,6 +20,7 @@ export const BusinessServicesListDetail = [
         },
         {   
             "title": "Formations",
+            "anchor": "Formations",
             "list":
             [
                 {"li":"Support for your employees;"},
@@ -30,6 +32,7 @@ export const BusinessServicesListDetail = [
         },
         {   
             "title": "Business Coaching",
+            "anchor": "BusinessCoaching",
             "list":
             [
                 {"li":"Learn to communicate better with your team/peers/hierarchy;"},
@@ -43,10 +46,12 @@ export const BusinessServicesListDetail = [
         },
         {   
             "title": "Feedback 360",
+            "anchor": "Feedback360",
             "text":'It is an employee evaluation process involving all actors with an upstream or downstream link (N+1, peers, N-1, N-2, etc.) direct or even indirect (customers for example) as part of their work. This evaluation makes it possible to carry out a complete and precise analysis of the professional profile of the employee evaluated in order to define a tailor-made progress and/or development plan. The analysis covers both the know-how and the interpersonal skills of employees. The assessment may, among other things, focus on managerial skills, communication skills, decision-making skills, management of responsibilities, etc.',
         },
         {   
             "title": "Color Profil Teams",
+            "anchor": "ColorProfilTeams",
             "text":'Color Profils Teams profiling and workshops allow you to communicate better and truly collaborate, prevent conflicts and manage complex situations and also gain in fulfillment and performance.',
         },
         

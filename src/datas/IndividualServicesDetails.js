@@ -3,6 +3,7 @@
 export const IndividualServicesListDetail = [
     {   
         "title": "Coaching",
+        "anchor": "Coaching",
         "list":
         [
             {"li":"Support in career reorientation;"},
@@ -17,6 +18,7 @@ export const IndividualServicesListDetail = [
     },
     {   
         "title": "Color Profil",
+        "anchor": "ColorProfil",
         "text":'Color Profil profiling allows everyone to know themselves better in order to be more successful. This method allows you to identify the avenues that will allow you to achieve your objectives more certainly and more peacefully.',
     },
     

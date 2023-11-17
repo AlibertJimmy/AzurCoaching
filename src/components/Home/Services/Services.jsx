@@ -1,5 +1,6 @@
 // Import React Libraries
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 // Import Constans
 import { responsiveWidth } from '../../../utils/Constant' 
@@ -68,6 +69,8 @@ const StyledP = styled.p`
 `
 
 function Services({servicesList}) {
+
+
     return (
         
           <ServicesWrapper>
@@ -76,9 +79,10 @@ function Services({servicesList}) {
                     <ServiceContainer key={service.title}>
                         
                             <IconContainer>
-                            <Link to={`/${service.link}`}>
-                                <IconIMG src={service.illustration}></IconIMG>
-                                </Link>
+                            
+                            <HashLink to={`/${service.link}${service.anchor ? `#${service.anchor}` : ''}`}>
+                                    <IconIMG src={service.illustration} alt='icon'></IconIMG>
+                            </HashLink>
                             </IconContainer>
                         
                         <ServiceContentContainer>
