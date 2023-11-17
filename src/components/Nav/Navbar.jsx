@@ -22,7 +22,6 @@ const StyledNav = styled(BaseNav)`
     position: fixed;
     top:0;
     width:100%;
-    ${ComponentBorder};
     height: ${navHeight}px;
 
     display: flex;
@@ -35,9 +34,7 @@ const StyledNav = styled(BaseNav)`
     background-color: ${({ isScrolled }) => (isScrolled ? 'white' : 'transparent')};
     color: ${({ isScrolled }) => (isScrolled ? 'black' : 'white')};
 
-    @media (max-width: ${responsiveWidth}px) {
-      position: absolute;
-    }
+    
 
 
 `

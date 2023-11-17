@@ -33,8 +33,7 @@ const StyledBurger = styled.div`
         display: flex;
         justify-content: space-around;
         flex-flow: column nowrap;
-        position: absolute;
-        margin-right: 10px;
+        border-color: black;
     }
 
     div{
@@ -59,6 +58,9 @@ const StyledBurger = styled.div`
 
         background-color: ${( {open}) => open ? colors.burgerDivOpen : colors.burgerDiv};
         
+        @media (max-width: ${responsiveWidth}px){
+            background-color: black;
+        }
 
     }
 `
