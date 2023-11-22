@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 // Import Component
 import ScrollingStrip from '../ScrollingStrip/ScrollingStrip';
 
+// Import Functions
+import { scrollToTop } from '../../utils/Functions';
+
 // Import Assets
 import HomePicture from '../../assets/pictures/header_index.jpg';
 
@@ -16,13 +19,12 @@ import styled from 'styled-components';
 import { StyledButton } from '../../utils/Styles';
 
 // Import Constants
-import { borderWidth, responsiveWidth } from '../../utils/Constant';
-import { scrollToTop } from '../../utils/Functions';
+import { borderWidth, responsiveWidth, topIllustrationHeight } from '../../utils/Constant';
 
 const IllustrationContainer = styled.div`
     position: relative;
     width: 100%; 
-    height:99vh;
+    height:${topIllustrationHeight}px;
     background-image: url(${HomePicture});
     background-size: cover;
 `;

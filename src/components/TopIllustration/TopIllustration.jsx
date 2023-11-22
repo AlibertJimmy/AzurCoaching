@@ -10,15 +10,15 @@ import HomePicture from '../../assets/pictures/header_index.jpg';
 // Import Datas
 
 // Import Style
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 // Import Constants
-import { borderWidth, responsiveWidth } from '../../utils/Constant';
+import { borderWidth, responsiveWidth, topIllustrationHeight } from '../../utils/Constant';
 
 const IllustrationContainer = styled.div`
     position: relative;
     width: 100%; 
-    height:99vh;
+    height:${topIllustrationHeight}px;
     background-image: url(${HomePicture});
     background-size: cover;
 `;
@@ -38,13 +38,17 @@ const ContentPosition = styled.div`
     border: ${borderWidth}px solid black;
 `;
 
-const StyledTitle = styled.h1`
-    font-size:100px;
-    
+const Commontext = css`
     font-family:sans-serif;
     font-weight: bold;
     line-height: 1;
     color: white;
+`;
+
+const StyledTitle = styled.h1`
+    ${Commontext};
+    font-size:100px;
+    
     text-transform:uppercase;
 
     @media (max-width: ${responsiveWidth}px) {
@@ -53,24 +57,17 @@ const StyledTitle = styled.h1`
 `;
 
 const StyledText1 = styled.div`
+    ${Commontext};
     font-size:25px;
-        
-    font-family:sans-serif;
-    font-weight: bold;
-    line-height: 1;
-    color: white;
 
     @media (max-width: ${responsiveWidth}px) {
         font-size: 15px;    
     }
 `;
 const StyledText2 = styled.div`
-    font-size:40px;
-            
-    font-family:sans-serif;
-    font-weight: bold;
-    line-height: 1;
-    color: white;
+    ${Commontext};
+    font-size:35px;
+
     text-transform:uppercase;
 
     margin-top: 20px;

@@ -7,3 +7,5 @@ export const navHeight = 50;
 
 export const profilePicSize = 400;
 export const profilePicSizeResponsive = 200;
+
+export const topIllustrationHeight = 400;

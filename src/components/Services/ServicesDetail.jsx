@@ -126,8 +126,8 @@ function ServicesDetails ({ servicesList }) {
                             )
                           : (
                             <StyledUl>
-                                {service.list.map((liComponent) => (
-                                    <li key={service.title}>{liComponent.li}</li>
+                                {service.list.map((liComponent, index) => (
+                                    <li key={`${service.title}-li-${index}`}>{liComponent.li}</li>
                                 ))}
                             </StyledUl>
                             )}
