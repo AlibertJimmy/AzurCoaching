@@ -9,6 +9,9 @@ import PropTypes from 'prop-types';
 import Burger from './BurgerButton';
 import Logo from './Logo/Logo';
 
+// Import Functions
+import { scrollToTop } from '../../utils/Functions';
+
 // Import Style
 import styled from 'styled-components';
 
@@ -65,7 +68,7 @@ function Navbar () {
 
   return (
         <StyledNav isScrolled={isScrolled}>
-            <Link to='/'><Logo/></Link>
+            <Link to='/' onClick={scrollToTop}><Logo/></Link>
             <Burger/>
         </StyledNav>
   );
