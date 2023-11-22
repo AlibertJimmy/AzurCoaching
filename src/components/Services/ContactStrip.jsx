@@ -1,4 +1,5 @@
 // Import React Libraries
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Import Datas
@@ -15,7 +16,7 @@ const StripContainer = styled.div`
     flex-direction:column;
     background-color:${colors.bluePastel};
     height:300px;
-`
+`;
 
 const ContentPosition1 = styled.div`
     
@@ -29,7 +30,7 @@ const ContentPosition1 = styled.div`
     width:100%;
 
     border-radius: 15px;
-`
+`;
 const ContentPosition2 = styled.div`
     
     position: relative;
@@ -42,7 +43,7 @@ const ContentPosition2 = styled.div`
     width:100%;
 
     border-radius: 15px;
-`
+`;
 
 const StyledTitle = styled.h1`
     font-size:30px;
@@ -55,7 +56,7 @@ const StyledTitle = styled.h1`
     @media (max-width: ${responsiveWidth}px) {
         font-size: 45px;    
     }
-`
+`;
 
 const StyledText1 = styled.div`
     font-size:25px;
@@ -67,7 +68,7 @@ const StyledText1 = styled.div`
     @media (max-width: ${responsiveWidth}px) {
         font-size: 25px;    
     }
-`
+`;
 
 const StyledButton = styled.button`
     background: white;
@@ -80,33 +81,33 @@ const StyledButton = styled.button`
     font-size:12px;
     margin-top:20px;
     text-transform: uppercase;
-`
+`;
 
+function ContactStrip () {
+  const title = 'Do you like my services ?';
+  const text1 = "Let's discuss it, I would d be happy";
+  const text2 = 'to share with you.';
+  const buttonText = 'Contact Me';
 
-function ContactStrip() {
-
-    return (
+  return (
             <StripContainer>
                 <ContentPosition1>
-                    <StyledTitle>Do you like my services ?</StyledTitle>
+                    <StyledTitle>{title}</StyledTitle>
                 </ContentPosition1>
                 <ContentPosition2>
                     <StyledText1>
-                        Let's discuss it, I'd be happy
+                        {text1}
                         <br></br>
-                        to share with you. 
+                        {text2}
                     </StyledText1>
                     <Link to='/Contact'>
-                        <StyledButton>Contact Me</StyledButton>
+                        <StyledButton>{buttonText}</StyledButton>
                     </Link>
-                    
+
                 </ContentPosition2>
-                    
-                    
-                
+
             </StripContainer>
-    )
-  }
-  
-  export default ContactStrip;
-  
+  );
+}
+
+export default ContactStrip;

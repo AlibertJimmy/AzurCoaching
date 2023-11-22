@@ -1,4 +1,7 @@
+// Import React Libraries
 import React, { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
+// Import Style
 import styled from 'styled-components';
 
 const NumberAnimationContainer = styled.div`
@@ -13,12 +16,11 @@ const Number = styled.span`
   text-align: center;
 `;
 
-
-function IncrementalAnimation({ endValue }) {
+function IncrementalAnimation ({ endValue }) {
   const animationDuration = 4000; // Animation duration in milliseconds
   const totalSteps = 60; // Total number of animation steps
 
-  const step = (endValue - 0) / totalSteps; // Calculate the linear step
+  const step = (endValue - 0) / totalSteps;
   const containerRef = useRef(null);
   const [animationFinished, setAnimationFinished] = useState(false);
   let interval;
@@ -30,7 +32,7 @@ function IncrementalAnimation({ endValue }) {
       if (currentValue < endValue && !animationFinished) {
         currentValue += step;
         if (currentValue >= endValue) {
-          currentValue = endValue; // Ensure the end value is reached exactly
+          currentValue = endValue;
           setAnimationFinished(true);
         }
         if (containerRef.current) {
@@ -62,5 +64,9 @@ function IncrementalAnimation({ endValue }) {
     </NumberAnimationContainer>
   );
 }
+
+IncrementalAnimation.propTypes = {
+  endValue: PropTypes.number.isRequired
+};
 
 export default IncrementalAnimation;

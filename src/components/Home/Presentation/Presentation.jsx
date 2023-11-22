@@ -1,6 +1,5 @@
 // Import React Libraries
-import {css} from 'styled-components';
-// Import Component
+import React from 'react';
 
 // Import Assets
 import ProfilePic from '../../../assets/pictures/ProfilePic.png';
@@ -9,7 +8,7 @@ import ProfilePic from '../../../assets/pictures/ProfilePic.png';
 import { PresentationContent } from '../../../datas/Presentation';
 
 // Import Style
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { profilePicSize, profilePicSizeResponsive, responsiveWidth } from '../../../utils/Constant';
 
 const PresentationWrapper = styled.div`
@@ -21,54 +20,52 @@ const PresentationWrapper = styled.div`
         flex-direction:column;
       }
 
-`
+`;
 const PresentationTextWrapper = styled.div`
     margin: 20px;
-`
+`;
 
 const StyledTitle = styled.h1`
 
-`
+`;
 
 const StyledSumUp = styled.h2`
     font-style:sans-serif;
     font-size:20px;
     font-weight:normal;
     margin:0;
-`
+`;
 
 const CommonP = css`
     font-size: 18px;
-`
+`;
 
 const StyledP = styled.p`
     ${CommonP};
-`
+`;
 
 const StyledPItalic = styled.p`
     ${CommonP};
     font-style:italic;
-`
+`;
 
 const StyledIMG = styled.img`
     margin: 20px;
 
     height: ${profilePicSize}px;
     width: ${profilePicSize}px;
-    border-radius: ${profilePicSize/2}px;
+    border-radius: ${profilePicSize / 2}px;
 
     @media (max-width: ${responsiveWidth}px){
         height: ${profilePicSizeResponsive}px;
         width: ${profilePicSizeResponsive}px;
-        border-radius: ${profilePicSizeResponsive/2}px;
+        border-radius: ${profilePicSizeResponsive / 2}px;
       }
     
-`
+`;
 
-function Presentation() {
-
-
-    return (
+function Presentation () {
+  return (
             <PresentationWrapper>
                 <PresentationTextWrapper>
                     <StyledTitle>{PresentationContent.title}</StyledTitle>
@@ -84,8 +81,7 @@ function Presentation() {
                     <StyledIMG src={ProfilePic} alt='ProfilePic'></StyledIMG>
                 </div>
             </PresentationWrapper>
-    )
-  }
-  
-  export default Presentation;
-  
+  );
+}
+
+export default Presentation;

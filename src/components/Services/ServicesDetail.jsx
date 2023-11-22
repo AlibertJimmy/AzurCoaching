@@ -1,20 +1,22 @@
 // Import React Libraries
+import React from 'react';
+
+// Import PropTypes
+import { servicesListDetailPropTypes } from '../../datas/DataPropTypes';
 
 // Import Constans
-import { responsiveWidth } from '../../utils/Constant' 
+import { responsiveWidth } from '../../utils/Constant';
 // Import Style
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { ComponentBorder } from '../../utils/Styles';
 import colors from '../../utils/Colors';
-import { useRef } from 'react';
-
 
 const ServicesWrapper = styled.div`
     ${ComponentBorder};    
     display:flex;
     flex-direction:column;
     margin: 20px;   
-`
+`;
 
 const ServiceContainer = styled.div`
     ${ComponentBorder}; 
@@ -30,13 +32,13 @@ const ServiceContainer = styled.div`
         position: absolute;
         bottom: 0;
         left: 30%;
-        width: 33%; /* Adjust the width based on how much you want to underline */
-        border-bottom: 1px solid ${colors.bluePastel}; /* Adjust the color and thickness */
+        width: 33%; 
+        border-bottom: 1px solid ${colors.bluePastel}; 
       }
 
     &:last-child {
         &:before {
-            content: none; /* Remove the underline effect for the last child */
+            content: none; 
         }
     }
     
@@ -44,15 +46,14 @@ const ServiceContainer = styled.div`
     flex-direction:column;
     }
     
-`
+`;
 
 const LeftDiv = styled.div`
     display:flex;
     flex-direction:column;
     width:300px;
     ${ComponentBorder};
-`
- 
+`;
 
 const RightDiv = styled.div`
     display:flex;
@@ -63,7 +64,7 @@ const RightDiv = styled.div`
     @media (max-width: ${responsiveWidth}px){
         width:300px;
     }
-`
+`;
 const StyledTitle = styled.h1`
     font-size:25px;
     font-weight:bold;
@@ -79,14 +80,14 @@ const StyledTitle = styled.h1`
         position: absolute;
         bottom: 0;
         left: 20px;
-        width: 30%; /* Adjust the width based on how much you want to underline */
-        border-bottom: 2px solid ${colors.bluePastel}; /* Adjust the color and thickness */
+        width: 30%; 
+        border-bottom: 2px solid ${colors.bluePastel}; 
       }
 
-`
+`;
 const StyledP = styled.p`
       padding-left: 2em;
-`
+`;
 
 const StyledUl = styled.ul`
     list-style-type: none;
@@ -97,7 +98,7 @@ const StyledUl = styled.ul`
 
         &::before {
             content: "\\2714";
-            margin-right: 1.5em; /* Adjust the spacing between the checkmark and text */
+            margin-right: 1.5em; 
 
             @media (max-width: ${responsiveWidth}px){
                 margin-right: 0.55em; 
@@ -106,37 +107,39 @@ const StyledUl = styled.ul`
     }
 
     
-`
+`;
 
-function ServicesDetails({servicesList}) {
-    
-    return (
-        
+function ServicesDetails ({ servicesList }) {
+  return (
+
           <ServicesWrapper>
-            
+
                     {servicesList.map((service) => (
                     <ServiceContainer key={service.title} id={service.anchor}>
                         <LeftDiv>
                             <StyledTitle>{service.title}</StyledTitle>
                         </LeftDiv>
                         <RightDiv>
-                        {service.text ? (
+                        {service.text
+                          ? (
                             <StyledP>{service.text}</StyledP>
-                            ) : (
+                            )
+                          : (
                             <StyledUl>
                                 {service.list.map((liComponent) => (
-                                    <li>{liComponent.li}</li>
+                                    <li key={service.title}>{liComponent.li}</li>
                                 ))}
                             </StyledUl>
                             )}
                         </RightDiv>
-                        
+
                     </ServiceContainer>
-                ))}
+                    ))}
           </ServicesWrapper>
-        
-    )
-  }
-  
-  export default ServicesDetails
-  
+
+  );
+}
+
+ServicesDetails.propTypes = servicesListDetailPropTypes;
+
+export default ServicesDetails;

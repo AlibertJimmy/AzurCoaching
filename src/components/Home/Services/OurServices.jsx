@@ -1,21 +1,21 @@
 // Import React Libraries
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { css } from 'styled-components';
+
 // Import Component
 import Services from './Services';
 
 // Import Assets
-import ArrowRight from '../../../assets/icon/arrowRight.png'
+import ArrowRight from '../../../assets/icon/arrowRight.png';
 
 // Import Datas
 import { IndividualServicesList } from '../../../datas/IndividualServices';
 import { BusinessServicesList } from '../../../datas/BusinessServices';
 
 // Import Style
-import styled from 'styled-components'
+import styled, { css } from 'styled-components';
 import { ComponentBorder, StyledButton } from '../../../utils/Styles';
 import colors from '../../../utils/Colors';
-
 
 const ServicesWrapper = styled.div`
     
@@ -23,10 +23,10 @@ const ServicesWrapper = styled.div`
     flex-direction:column;
     ${ComponentBorder};
     margin: 20px;
-`
+`;
 const CommonTitle = css`
     color:${colors.bluePastel};
-`
+`;
 
 const StyledTitle = styled.h1`
     ${CommonTitle};
@@ -34,16 +34,16 @@ const StyledTitle = styled.h1`
     font-size:30px;
     
     justify-content:center;
-`
+`;
 const StyledSubTitle = styled.h1`
     ${CommonTitle};
     font-size:20px;
     margin-left: 20px;
-`
+`;
 const ButtonContainer = styled.div`
     display:flex;
     justify-content:center;
-`
+`;
 
 const CustomButton = styled(StyledButton)`
     img{
@@ -55,17 +55,17 @@ const CustomButton = styled(StyledButton)`
             display:inline;
         }
     }
-`
+`;
 
 const StyledIMG = styled.img`
     height: 10px;
     width: 10px;
     padding-left:10px;
-`
+`;
 
-function OurServices() {
-    return (
-        
+function OurServices () {
+  return (
+
           <ServicesWrapper>
             <StyledTitle>Our Services</StyledTitle>
 
@@ -78,7 +78,7 @@ function OurServices() {
                     </CustomButton>
                 </Link>
             </ButtonContainer>
-    
+
             <StyledSubTitle>Individual</StyledSubTitle>
             <Services servicesList={IndividualServicesList}/>
             <ButtonContainer>
@@ -89,10 +89,8 @@ function OurServices() {
                 </Link>
             </ButtonContainer>
           </ServicesWrapper>
-        
-    )
-  }
-  
-  
-  export default OurServices
-  
+
+  );
+}
+
+export default OurServices;

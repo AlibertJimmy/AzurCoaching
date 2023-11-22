@@ -1,22 +1,26 @@
 // Import React Libraries
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-// Import Component 
-import Burger from './BurgerButton'
-import Logo from './Logo/Logo'
+// Import PropTypes
+import PropTypes from 'prop-types';
+
+// Import Component
+import Burger from './BurgerButton';
+import Logo from './Logo/Logo';
 
 // Import Style
-import styled from 'styled-components'
-import { ComponentBorder } from '../../utils/Styles'
-import { navHeight } from '../../utils/Constant'
+import styled from 'styled-components';
 
 // Import Constants
-import { responsiveWidth } from '../../utils/Constant'
-
-
+import { navHeight } from '../../utils/Constant';
 
 const BaseNav = ({ className, children }) => <nav className={className}>{children}</nav>;
+
+BaseNav.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired
+};
 
 const StyledNav = styled(BaseNav)`
     position: fixed;
@@ -29,48 +33,42 @@ const StyledNav = styled(BaseNav)`
     padding: 10px;
     z-index: 9999;
     
-    transition: background-color 0.3s ease; /* Add a smooth transition */
+    transition: background-color 0.3s ease;
 
     background-color: ${({ isScrolled }) => (isScrolled ? 'white' : 'transparent')};
     color: ${({ isScrolled }) => (isScrolled ? 'black' : 'white')};
+`;
 
-    
+function Navbar () {
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const scrollThreshold = 100;
 
-`
-//
-function Navbar(){
-    const [isScrolled, setIsScrolled] = useState(false);
+      // Check if the scroll position is beyond the threshold
+      if (scrollPosition > scrollThreshold) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-    useEffect(() => {
-      const handleScroll = () => {
-        const scrollPosition = window.scrollY;
-        const scrollThreshold = 100; // Adjust the threshold as needed
-  
-        // Check if the scroll position is beyond the threshold
-        if (scrollPosition > scrollThreshold) {
-          setIsScrolled(true);
-        } else {
-          setIsScrolled(false);
-        }
-      };
-  
-      // Add the scroll event listener
-      document.addEventListener('scroll', handleScroll);
-  
-      // Clean up the event listener on component unmount
-      return () => {
-        document.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
+    document.addEventListener('scroll', handleScroll);
 
-    return (
+    // Clean up the event listener on component unmount
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
         <StyledNav isScrolled={isScrolled}>
             <Link to='/'><Logo/></Link>
-            <Burger/> 
+            <Burger/>
         </StyledNav>
-    )
-
-}
+  );
+};
 
 export default Navbar;

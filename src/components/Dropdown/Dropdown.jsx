@@ -1,8 +1,9 @@
 // Import React Component
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 // Import Assets
-import ArrowDown from '../../assets/icon/arrowDown.png'
+import ArrowDown from '../../assets/icon/arrowDown.png';
 
 // Import Style
 import styled from 'styled-components';
@@ -41,25 +42,19 @@ const DropDownArrow = styled.img`
   height:10px;
   padding:0;
   margin:0;
-`
+`;
 
-// Dropdown component
-function Dropdown({ dropDownTitle, options, links }){
+function Dropdown ({ dropDownTitle, options, links }) {
   const [isOpen, setIsOpen] = useState(false);
-
-
 
   const handleOptionClick = () => {
     setIsOpen(false);
     scrollToTop();
-
   };
-
-  
 
   return (
     <DropdownContainer onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} id='dropDown'>
-      <StyledSpanHeader>{dropDownTitle}</StyledSpanHeader><DropDownArrow src={ArrowDown} alt="ArrowDown" style={{paddingLeft:'5px'}}/>
+      <StyledSpanHeader>{dropDownTitle}</StyledSpanHeader><DropDownArrow src={ArrowDown} alt="ArrowDown" style={{ paddingLeft: '5px' }}/>
       <DropdownContent open={isOpen}>
         {options.map((option, index) => (
           <DropdownItem key={index} >
@@ -69,6 +64,12 @@ function Dropdown({ dropDownTitle, options, links }){
       </DropdownContent>
     </DropdownContainer>
   );
+};
+
+Dropdown.propTypes = {
+  dropDownTitle: PropTypes.string.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  links: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default Dropdown;

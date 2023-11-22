@@ -1,18 +1,19 @@
 // Import React Libraries
-import React from "react";
+import React from 'react';
+
+// Import PropType
+import PropTypes from 'prop-types';
 
 // Import compoment
-import Dropdown from "../Dropdown/Dropdown";
-
+import Dropdown from '../Dropdown/Dropdown';
 
 // Import Style
-import styled from "styled-components";
-import { StyledLink, underLineEffect } from "../../utils/Styles";
+import styled from 'styled-components';
+import { StyledLink, underLineEffect } from '../../utils/Styles';
 
 // Import constantes
-import { responsiveWidth } from "../../utils/Constant";
-import { scrollToTop } from "../../utils/Functions";
-
+import { responsiveWidth } from '../../utils/Constant';
+import { scrollToTop } from '../../utils/Functions';
 
 const StyledUl = styled.ul`
 
@@ -44,39 +45,39 @@ const StyledUl = styled.ul`
         
         background: #ffffff;
 
-        transform: ${({open}) => open ? 'translateX(0)' : 'translateX(100%)' };
+        transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
        li{
             margin-bottom: 0px;
        }
     }
-`
+`;
 const StyledLi = styled.li`
     ${underLineEffect};
 
-`
+`;
 
+function SideNav ({ open, handleCloseBurger }) {
+  function handleLinkClick () {
+    handleCloseBurger();
+    scrollToTop();
+  }
 
-function SideNav({open, handleCloseBurger}){
+  const dropDownTitle = 'Services';
+  const links = ['BusinessServices', 'IndividualServices'];
+  const linksRender = ['Business Services', 'Individual Services'];
 
-
-    function handleLinkClick() {
-        handleCloseBurger(); 
-        scrollToTop();
-    }
-
-    
-
-    const dropDownTitle = 'Services';
-    const links = ['BusinessServices', 'IndividualServices'];
-    const linksRender = ['Business Services', 'Individual Services'];
-    
-    return(
+  return (
         <StyledUl open={open}>
             <StyledLi><StyledLink to="/" onClick={handleLinkClick}>Home</StyledLink></StyledLi>
             <StyledLi><Dropdown dropDownTitle ={dropDownTitle} options={linksRender} links={links}/></StyledLi>
             <StyledLi><StyledLink to="/Contact" onClick={handleLinkClick}>Contact</StyledLink></StyledLi>
         </StyledUl>
-    )
+  );
 }
+
+SideNav.propTypes = {
+  open: PropTypes.bool.isRequired,
+  handleCloseBurger: PropTypes.func.isRequired
+};
 
 export default SideNav;

@@ -1,20 +1,23 @@
 // Import React Libraries
-//import { Link } from 'react-router-dom';
+import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 
-// Import Constans
-import { responsiveWidth } from '../../../utils/Constant' 
+// Import Proptype
+import { serviceListPropType } from '../../../datas/DataPropTypes';
+
 // Import Style
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { ComponentBorder } from '../../../utils/Styles';
 
+// Import Constants
+import { responsiveWidth } from '../../../utils/Constant';
 
 const ServicesWrapper = styled.div`
     ${ComponentBorder};    
     display:flex;
     flex-wrap: wrap;
     margin: 20px;   
-`
+`;
 
 const ServiceContainer = styled.div`
     ${ComponentBorder};    
@@ -33,7 +36,7 @@ const ServiceContainer = styled.div`
     @media (max-width: ${responsiveWidth}px){
         flex: 1 0 calc(50% - 10px);
       }
-`
+`;
 
 const IconContainer = styled.div`
     ${ComponentBorder};
@@ -43,7 +46,7 @@ const IconContainer = styled.div`
     height: 40px;
     width: 40px;
 
-`
+`;
 
 const IconIMG = styled.img`
 
@@ -53,49 +56,50 @@ const IconIMG = styled.img`
 
     border: 2px solid white;
     border-radius:20px;
-`
+`;
 
 const ServiceContentContainer = styled.div`
     display:flex;
     flex-direction:column;
     ${ComponentBorder};
-`
+`;
 const StyledTitle = styled.h1`
     font-size:20px;
 
-`
+`;
 const StyledP = styled.p`
 
-`
+`;
 
-function Services({servicesList}) {
+function Services ({ servicesList }) {
+  return (
 
-
-    return (
-        
           <ServicesWrapper>
-            
+
                     {servicesList.map((service) => (
                     <ServiceContainer key={service.title}>
-                        
+
                             <IconContainer>
-                            
+
                             <HashLink to={`/${service.link}${service.anchor ? `#${service.anchor}` : ''}`}>
                                     <IconIMG src={service.illustration} alt='icon'></IconIMG>
                             </HashLink>
                             </IconContainer>
-                        
+
                         <ServiceContentContainer>
                             <StyledTitle>{service.title}</StyledTitle>
                             <StyledP>{service.text}</StyledP>
                         </ServiceContentContainer>
-                        
+
                     </ServiceContainer>
-                ))}
+                    ))}
           </ServicesWrapper>
-        
-    )
-  }
-  
-  export default Services
-  
+
+  );
+};
+
+Services.propTypes = {
+  servicesList: serviceListPropType.isRequired
+};
+
+export default Services;

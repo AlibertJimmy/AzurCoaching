@@ -2,20 +2,19 @@
 import { Link } from 'react-router-dom';
 
 // Import Style
-import styled,{ css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
 // Impor Colors
 import colors from './Colors';
 import { borderWidth, responsiveWidth } from './Constant';
 
 export const PageWrapper = styled.div`
-
-`
+`;
 
 export const ComponentBorder = css`
     border: ${borderWidth}px solid black;
     border-radius:15px;
-`
+`;
 
 const commonWriting = css`
   font-family:  sans-serif;
@@ -34,10 +33,7 @@ const commonLink = css`
   &:hover {
     color: ${colors.linkHover};
   }
-
-  
-    
-`
+`;
 
 export const underLineEffect = css`
     display: inline-block;
@@ -49,30 +45,29 @@ export const underLineEffect = css`
       position: absolute;
       width: 0;
       bottom: 10px;
-      height: 2px; /* Adjust the underline height as needed */
+      height: 2px; 
       left: 50%;
       transform: translateX(-50%);
-      background-color: #007bff; /* Set the underline color */
-      transition: width 0.3s ease-out; /* Set the animation duration and easing */
+      background-color: #007bff; 
+      transition: width 0.3s ease-out;
     }
 
     &:hover::after {
       width: 100%;
     }
-`
-
+`;
 
 export const StyledLink = styled(Link)`
     ${commonWriting};
     ${commonLink};
     color:inherit;
-`
+`;
 
 export const StyledLinkDropDown = styled(Link)`
     ${commonWriting};
     color: ${colors.linkResponsive} ;
     text-decoration: none;
-`
+`;
 
 export const StyledLi = styled.li`
   list-style:none;
@@ -80,10 +75,10 @@ export const StyledLi = styled.li`
   position: relative;
   display: inline-block;
   height:45px;
-`
+`;
 export const StyledSpanHeader = styled.span`
   ${commonWriting};
-`
+`;
 
 export const ButtonStyle = css`
   background: #5B89B4;
@@ -96,8 +91,8 @@ export const ButtonStyle = css`
   font-size:12px;
   margin-top:20px;
   text-transform: uppercase;
-`
+`;
 
 export const StyledButton = styled.button`
-${ButtonStyle};
-`
+  ${ButtonStyle};
+`;

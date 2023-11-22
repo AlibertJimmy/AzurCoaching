@@ -1,11 +1,11 @@
 // Import React Libraries
-import { css } from 'styled-components';
+import React from 'react';
 
 // Import Datas
 import { ContactIntroductionContent } from '../../datas/ContactIntroduction';
 
 // Import Style
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import colors from '../../utils/Colors';
 
 // Import Constants
@@ -14,9 +14,7 @@ import { responsiveWidth } from '../../utils/Constant';
 const IntroductionContainer = styled.div`
     display: flex;
     flex-direction: column;
-`
-
-
+`;
 
 const StyledTitle = styled.h1`
     font-size:30px;
@@ -26,12 +24,12 @@ const StyledTitle = styled.h1`
     @media (max-width: ${responsiveWidth}px) {
         font-size: 45px;    
     }
-`
+`;
 
 const CommonText = css`
     font-size:15px;
     font-family:sans-serif;
-`
+`;
 
 const StyledText1 = styled.p`
     ${CommonText};
@@ -40,8 +38,7 @@ const StyledText1 = styled.p`
     @media (max-width: ${responsiveWidth}px) {
         font-size: 25px;    
     }
-`
-
+`;
 
 const StyledText2 = styled.p`
     ${CommonText};
@@ -52,13 +49,10 @@ const StyledText2 = styled.p`
     @media (max-width: ${responsiveWidth}px) {
         font-size: 25px;    
     }
-`
+`;
 
-
-function ContactIntroduction() {
-
-
-    return (
+function ContactIntroduction () {
+  return (
             <IntroductionContainer>
                     <StyledTitle>{ContactIntroductionContent.title}</StyledTitle>
                     <StyledText1>
@@ -70,8 +64,7 @@ function ContactIntroduction() {
                         {ContactIntroductionContent.text3}
                     </StyledText2>
             </IntroductionContainer>
-    )
-  }
-  
-  export default ContactIntroduction;
-  
+  );
+}
+
+export default ContactIntroduction;

@@ -1,5 +1,7 @@
 // Import React Libraries
+import React from 'react';
 import { Link } from 'react-router-dom';
+
 // Import Component
 import ScrollingStrip from '../ScrollingStrip/ScrollingStrip';
 
@@ -23,7 +25,7 @@ const IllustrationContainer = styled.div`
     height:99vh;
     background-image: url(${HomePicture});
     background-size: cover;
-`
+`;
 
 const ScrollingStripPosition = styled.div`
     
@@ -38,8 +40,7 @@ const ScrollingStripPosition = styled.div`
 
     border-radius: 15px;
     border: ${borderWidth}px solid black;
-`
-
+`;
 
 const StyledTitle = styled.h1`
     font-family: sans-serif;
@@ -50,40 +51,35 @@ const StyledTitle = styled.h1`
         font-size: 25px;
         
       }
-`
+`;
 
+function HomeIllustration () {
+  const customStyle = {
+    fontSize: '100px',
+    fontSizeResponsive: '25px',
+    fontStyle: '',
+    fontFamily: 'sans-serif',
+    fontWeight: 'bold',
+    lineHeight: '1',
+    color: 'white',
+    textTransform: 'uppercase'
 
-function HomeIllustration() {
+  };
 
-    const customStyle = {
-        fontSize:'100px',
-        fontSizeResponsive:'25px',
-        fontStyle:'',
-        fontFamily:'sans-serif',
-        fontWeight: 'bold',
-        lineHeight: '1',
-        color: 'white',
-        textTransform:'uppercase'
-
-    }
-
-    
-
-    return (
+  return (
             <IllustrationContainer>
                 <ScrollingStripPosition>
                     <StyledTitle>Azur</StyledTitle>
-                    
+
                     <ScrollingStrip datas={homeTitles} customStyle={customStyle}/>
                     <Link to='/BusinessServices' onClick={scrollToTop}>
                         <StyledButton>Check My Services</StyledButton>
                     </Link>
-                    
+
                 </ScrollingStripPosition>
-                
+
             </IllustrationContainer>
-    )
-  }
-  
-  export default HomeIllustration;
-  
+  );
+}
+
+export default HomeIllustration;

@@ -1,14 +1,15 @@
 // Import React Libraries
 import React from 'react';
 
-
+// Import PropType
+import PropTypes from 'prop-types';
 
 class CopyEmailLink extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.emailLinkRef = React.createRef();
     this.state = {
-      isCopied: false,
+      isCopied: false
     };
   }
 
@@ -29,7 +30,7 @@ class CopyEmailLink extends React.Component {
     }, 2000);
   };
 
-  render() {
+  render () {
     return (
       <span>
         <a
@@ -42,13 +43,13 @@ class CopyEmailLink extends React.Component {
         {this.state.isCopied && (
           <span
             style={{
-                position: 'fixed',
-                bottom: '10px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                padding: '10px',
-                zIndex: 1000,
-              ...this.props.style,
+              position: 'fixed',
+              bottom: '10px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              padding: '10px',
+              zIndex: 1000,
+              ...this.props.style
             }}
           >
             Email Copied To Clipboard
@@ -58,5 +59,17 @@ class CopyEmailLink extends React.Component {
     );
   }
 }
+
+const MailPopUpStyleType = PropTypes.shape({
+  fontFamily: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  borderRadius: PropTypes.string.isRequired
+});
+
+CopyEmailLink.propTypes = {
+  email: PropTypes.string.isRequired,
+  style: MailPopUpStyleType.isRequired
+};
 
 export default CopyEmailLink;

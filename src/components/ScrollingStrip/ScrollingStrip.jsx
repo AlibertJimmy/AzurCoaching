@@ -1,23 +1,25 @@
 // Import React Libraries
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-// Import Component
+// Import PropTypes
+import PropTypes from 'prop-types';
+import { homeTitlesPropTypes } from '../../datas/DataPropTypes';
 
 // Import Constant
-import { responsiveWidth } from "../../utils/Constant";
+import { responsiveWidth } from '../../utils/Constant';
 
 // Import Style
 import styled from 'styled-components';
 
-
-
-
-
-//const TitleContainer = styled.div`
 const TitleContainer = ({ className, children }) => <div className={className}>{children}</div>;
 
+TitleContainer.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired
+};
+
 const StyledTitleContainer = styled(TitleContainer)`
-    ${({ customStyle }) => customStyle &&`
+    ${({ customStyle }) => customStyle && `
     font-size: ${customStyle.fontSize};
     font-style: ${customStyle.fontStyle};
     font-family: ${customStyle.fontFamily};
@@ -28,45 +30,57 @@ const StyledTitleContainer = styled(TitleContainer)`
     `}  
 
     @media (max-width: ${responsiveWidth}px) {
-        ${({ customStyle }) => customStyle &&`
+        ${({ customStyle }) => customStyle && `
         font-size: ${customStyle.fontSizeResponsive};
         `
       }
-`
+`;
 
-
-function ScrollingStrip({datas, customStyle}){
-
+function ScrollingStrip ({ datas, customStyle }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Add temporisation between datas display
   useEffect(() => {
     if (datas.length > 0) {
-  
       const timer = setInterval(() => {
-        // Update the current index to show the next data
         setCurrentIndex((prevIndex) => (prevIndex + 1) % datas.length);
       }, 3000); // 8 seconds
-  
+
       return () => {
         clearInterval(timer); // Clear the interval on component unmount
       };
     }
   }, [datas]);
-  
-      if (datas.length === 0) {
-        return null; // Return null or a loading indicator until reviews are available.
-      }
+
+  if (datas.length === 0) {
+    return null;
+  }
 
   return (
       <div>
         <StyledTitleContainer customStyle={customStyle}>
             {datas[currentIndex]}
         </StyledTitleContainer>
-        
+
       </div>
-  )
+  );
 }
 
-export default ScrollingStrip;
+const customStylePropTypes = PropTypes.shape({
+  fontSize: PropTypes.string.isRequired,
+  fontSizeResponsive: PropTypes.string.isRequired,
+  fontStyle: PropTypes.string.isRequired,
+  fontFamily: PropTypes.string.isRequired,
+  fontWeight: PropTypes.string.isRequired,
+  lineHeight: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  textTransform: PropTypes.string.isRequired
+});
 
+ScrollingStrip.propTypes = {
+  datas: homeTitlesPropTypes.isRequired,
+  customStyle: customStylePropTypes.isRequired
+
+};
+
+export default ScrollingStrip;
