@@ -44,12 +44,13 @@ const DropDownArrow = styled.img`
   margin:0;
 `;
 
-function Dropdown ({ dropDownTitle, options, links }) {
+function Dropdown ({ dropDownTitle, options, links, handleCloseBurger }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOptionClick = () => {
     setIsOpen(false);
     scrollToTop();
+    handleCloseBurger();
   };
 
   return (
@@ -69,7 +70,8 @@ function Dropdown ({ dropDownTitle, options, links }) {
 Dropdown.propTypes = {
   dropDownTitle: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
-  links: PropTypes.arrayOf(PropTypes.string).isRequired
+  links: PropTypes.arrayOf(PropTypes.string).isRequired,
+  handleCloseBurger: PropTypes.func.isRequired
 };
 
 export default Dropdown;
