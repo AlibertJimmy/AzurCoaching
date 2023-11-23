@@ -2,7 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Import Datas
+// Import Functions
+import { scrollToTop } from '../../utils/Functions';
 
 // Import Style
 import styled from 'styled-components';
@@ -84,6 +85,9 @@ const StyledButton = styled.button`
 `;
 
 function ContactStrip () {
+  function handleClick () {
+    scrollToTop();
+  }
   const title = 'Do you like my services ?';
   const text1 = "Let's discuss it, I would d be happy";
   const text2 = 'to share with you.';
@@ -100,7 +104,7 @@ function ContactStrip () {
                         <br></br>
                         {text2}
                     </StyledText1>
-                    <Link to='/Contact'>
+                    <Link to='/Contact' onClick={handleClick}>
                         <StyledButton>{buttonText}</StyledButton>
                     </Link>
 
