@@ -6,13 +6,12 @@ import styled, { css } from 'styled-components';
 
 // Impor Colors
 import colors from './Colors';
-import { borderWidth, responsiveWidth } from './Constant';
+import { responsiveWidth } from './Constant';
 
 export const PageWrapper = styled.div`
 `;
 
 export const ComponentBorder = css`
-    border: ${borderWidth}px solid black;
     border-radius:15px;
 `;
 

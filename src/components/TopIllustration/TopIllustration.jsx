@@ -13,7 +13,7 @@ import HomePicture from '../../assets/pictures/header_index.jpg';
 import styled, { css } from 'styled-components';
 
 // Import Constants
-import { borderWidth, responsiveWidth, topIllustrationHeight } from '../../utils/Constant';
+import { responsiveWidth, topIllustrationHeight } from '../../utils/Constant';
 
 const IllustrationContainer = styled.div`
     position: relative;
@@ -35,7 +35,6 @@ const ContentPosition = styled.div`
     width:100%;
 
     border-radius: 15px;
-    border: ${borderWidth}px solid black;
 `;
 
 const Commontext = css`

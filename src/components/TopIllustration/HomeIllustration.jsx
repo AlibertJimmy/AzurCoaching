@@ -19,7 +19,7 @@ import styled from 'styled-components';
 import { StyledButton } from '../../utils/Styles';
 
 // Import Constants
-import { borderWidth, responsiveWidth, topIllustrationHeight } from '../../utils/Constant';
+import { responsiveWidth, topIllustrationHeight } from '../../utils/Constant';
 
 const IllustrationContainer = styled.div`
     position: relative;
@@ -41,7 +41,6 @@ const ScrollingStripPosition = styled.div`
     width:100%;
 
     border-radius: 15px;
-    border: ${borderWidth}px solid black;
 `;
 
 const StyledTitle = styled.h1`
