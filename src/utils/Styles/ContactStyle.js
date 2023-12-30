@@ -43,9 +43,7 @@ export const StyledText = styled.p`
 export const FormInputWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  flex-direction:row;
-
-  border: 1px solid red;
+  flex-direction: row;
 `;
 
 export const FormInputContainer = styled.div`
