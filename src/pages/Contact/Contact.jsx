@@ -14,11 +14,11 @@ function Contact () {
   const title = 'Contact';
 
   return (
-      <PageWrapper>
-            <TopIllustration title={title}/>
-            <ContactContent/>
-            <Footer/>
-      </PageWrapper>
+    <PageWrapper>
+      <TopIllustration title={title}/>
+      <ContactContent/>
+      <Footer/>
+    </PageWrapper>
   );
 }
 export default Contact;

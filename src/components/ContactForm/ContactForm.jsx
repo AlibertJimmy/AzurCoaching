@@ -3,86 +3,13 @@ import React, { useState } from 'react';
 
 // Import Assets
 import MailWhite from '../../assets/icon/Mail_White.png';
+import {
+  FormInputWrapper, FormInputContainer, FormFieldWrapper, FormInput,
+  StyledIMG
+} from '../../utils/Styles/ContactStyle';
+import { StyledButton } from '../../utils/Styles';
 
 // Import Style
-import styled, { css } from 'styled-components';
-import { ComponentBorder, ButtonStyle } from '../../utils/Styles';
-
-const ContactInfoWrapper = styled.div`
-    ${ComponentBorder};
-    border-color:red;
-    display: flex;
-    flex-wrap:wrap;
-    flex-direction:row;
-`;
-
-const ContactInfoContainer = styled.div`
-    ${ComponentBorder};
-    display:flex;
-    flex: 1 0 calc(40% - 10px);
-    width: 500px;
-    margin: 5px 10px;
-`;
-
-const CommonContactElement = css`
-    display:flex;
-    flex-direction:column;
-    width:100%;
-    input {
-        box-sizing: border-box; 
-    }
-
-    span.error {
-        color: red;
-        font-size: 12px;
-        margin-top: 5px;
-    }
-`;
-
-const ContactElement = styled.div`
-    ${CommonContactElement};    
-`;
-
-const ContactElementMessage = styled.div`
-    ${CommonContactElement};
-
-    height: 150px;
-
-    textarea{
-        height: 100%;
-    }
-`;
-
-const StyledIMG = styled.img`
-    width: 15px;
-    height:15px;
-    padding-right: 10px;
-`;
-
-const StyledButton = styled.button`
-    ${ButtonStyle};
-    width: 200px;
-`;
-
-const CommonInput = css`
-    border: 1px solid black;
-    border-radius: 2px;
-    height:25px;
-
-    &:focus {
-        
-        outline: 1px solid #8c8a89;
-    }
-`;
-
-const StyledInput = styled.input`
-    ${CommonInput};
-    
-`;
-
-const StyledTextArea = styled.textarea`
-    ${CommonInput};
-`;
 
 function ContactForm () {
   const [formData, setFormData] = useState({
@@ -166,11 +93,11 @@ function ContactForm () {
 
   return (
     <form onSubmit={handleSubmit}>
-        <ContactInfoWrapper>
-            <ContactInfoContainer>
-                <ContactElement>
+        <FormInputWrapper id='formInputWrapper'>
+            <FormInputContainer id='formInputContainerName'>
+                <FormFieldWrapper>
                     <label htmlFor="name">Name *</label>
-                    <StyledInput
+                    <FormInput
                     type="text"
                     id="name"
                     name="name"
@@ -178,13 +105,13 @@ function ContactForm () {
                     onChange={handleChange}
                     />
                     <span className="error">{formErrors.name}</span>
-                </ContactElement>
-            </ContactInfoContainer>
+                </FormFieldWrapper>
+            </FormInputContainer>
 
-            <ContactInfoContainer>
-                <ContactElement>
+            <FormInputContainer id='formInputContainerFirstName'>
+                <FormFieldWrapper>
                     <label htmlFor="firstName">First Name *</label>
-                    <StyledInput
+                    <FormInput
                     type="text"
                     id="firstName"
                     name="firstName"
@@ -192,13 +119,13 @@ function ContactForm () {
                     onChange={handleChange}
                     />
                     <span className="error">{formErrors.firstName}</span>
-                </ContactElement>
-            </ContactInfoContainer>
+                </FormFieldWrapper>
+            </FormInputContainer>
 
-            <ContactInfoContainer>
-                <ContactElement>
+            <FormInputContainer id='formInputContainerEmail'>
+                <FormFieldWrapper>
                     <label htmlFor="email">Email *</label>
-                    <StyledInput
+                    <FormInput
                     type="email"
                     id="email"
                     name="email"
@@ -206,13 +133,13 @@ function ContactForm () {
                     onChange={handleChange}
                     />
                     <span className="error">{formErrors.email}</span>
-                </ContactElement>
-            </ContactInfoContainer>
+                </FormFieldWrapper>
+            </FormInputContainer>
 
-            <ContactInfoContainer>
-                <ContactElement>
+            <FormInputContainer id='formInputContainerPhone'>
+                <FormFieldWrapper>
                     <label htmlFor="phone">Phone *</label>
-                    <StyledInput
+                    <FormInput
                     type="tel"
                     id="phone"
                     name="phone"
@@ -220,13 +147,13 @@ function ContactForm () {
                     onChange={handleChange}
                     />
                     <span className="error">{formErrors.phone}</span>
-                </ContactElement>
-            </ContactInfoContainer>
+                </FormFieldWrapper>
+            </FormInputContainer>
 
-            <ContactInfoContainer>
-                <ContactElement>
+            <FormInputContainer id='formInputContainerCompanie'>
+                <FormFieldWrapper>
                     <label htmlFor="companie">Companie</label>
-                    <StyledInput
+                    <FormInput
                     type="text"
                     id="companie"
                     name="companie"
@@ -234,13 +161,13 @@ function ContactForm () {
                     onChange={handleChange}
                     />
                     <span className="error">{formErrors.companie}</span>
-                </ContactElement>
-            </ContactInfoContainer>
+                </FormFieldWrapper>
+            </FormInputContainer>
 
-            <ContactInfoContainer>
-                <ContactElement>
+            <FormInputContainer id='formInputContainerSubject'>
+                <FormFieldWrapper>
                     <label htmlFor="subject">Subject *</label>
-                    <StyledInput
+                    <FormInput
                     type="text"
                     id="subject"
                     name="subject"
@@ -248,22 +175,22 @@ function ContactForm () {
                     onChange={handleChange}
                     />
                     <span className="error">{formErrors.subject}</span>
-                </ContactElement>
-            </ContactInfoContainer>
+                </FormFieldWrapper>
+            </FormInputContainer>
 
-            <ContactInfoContainer>
-                <ContactElementMessage>
+            <FormInputContainer id='formInputContainerMessage'>
+                <FormFieldWrapper style={{ height: '150px' }}>
                     <label htmlFor="message">Message *</label>
-                    <StyledTextArea
+                    <FormInput
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     />
                     <span className="error">{formErrors.message}</span>
-                </ContactElementMessage>
-            </ContactInfoContainer>
-        </ContactInfoWrapper>
+                </FormFieldWrapper>
+            </FormInputContainer>
+        </FormInputWrapper>
         <div style={{ marginLeft: '10px' }}>
             <StyledButton type="submit"><span><StyledIMG src={MailWhite} alt='Mail'></StyledIMG></span>Send the Message</StyledButton>
         </div>

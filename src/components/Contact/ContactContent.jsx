@@ -6,17 +6,11 @@ import ContactIntroduction from './ContactIntroduction';
 import ContactForm from '../ContactForm/ContactForm';
 
 // Import Style
-import styled from 'styled-components';
-
-const ContentWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 50px 50px;
-`;
+import { ContentWrapper } from '../../utils/Styles/ContactStyle';
 
 function ContactContent () {
   return (
-            <ContentWrapper>
+            <ContentWrapper id='contactContentWrapper'>
                 <ContactIntroduction/>
                 <ContactForm/>
             </ContentWrapper>
