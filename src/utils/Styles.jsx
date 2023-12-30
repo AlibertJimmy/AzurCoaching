@@ -6,9 +6,21 @@ import styled, { css } from 'styled-components';
 
 // Impor Colors
 import colors from './Colors';
-import { responsiveWidth } from './Constant';
+import { horizontalMargin, responsiveWidth } from './Constant';
 
 export const PageWrapper = styled.div`
+  width: 100%;
+`;
+
+export const SectionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+
+  padding: ${horizontalMargin}px;
+
+  box-sizing: border-box;
 `;
 
 export const ComponentBorder = css`
@@ -88,7 +100,6 @@ export const ButtonStyle = css`
   cursor:pointer;
   font-weight:600;
   font-size:12px;
-  margin-top:20px;
   text-transform: uppercase;
 `;
 

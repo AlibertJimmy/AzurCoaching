@@ -12,7 +12,6 @@ export const PresentationWrapper = styled.div`
   @media (max-width: ${responsiveWidth}px){
       flex-direction:column;
   }
-  border: 1px solid red;
 `;
 
 export const PresentationContainer = styled.div`

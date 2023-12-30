@@ -13,60 +13,16 @@ import { IndividualServicesList } from '../../../datas/IndividualServices';
 import { BusinessServicesList } from '../../../datas/BusinessServices';
 
 // Import Style
-import styled, { css } from 'styled-components';
-import { ComponentBorder, StyledButton } from '../../../utils/Styles';
-import colors from '../../../utils/Colors';
-
-const ServicesWrapper = styled.div`
-    
-    display:flex;
-    flex-direction:column;
-    ${ComponentBorder};
-    margin: 20px;
-`;
-const CommonTitle = css`
-    color:${colors.bluePastel};
-`;
-
-const StyledTitle = styled.h1`
-    ${CommonTitle};
-    display:flex;
-    font-size:30px;
-    
-    justify-content:center;
-`;
-const StyledSubTitle = styled.h1`
-    ${CommonTitle};
-    font-size:20px;
-    margin-left: 20px;
-`;
-const ButtonContainer = styled.div`
-    display:flex;
-    justify-content:center;
-`;
-
-const CustomButton = styled(StyledButton)`
-    img{
-        display:none;
-    }    
-
-    &:hover{
-        img{
-            display:inline;
-        }
-    }
-`;
-
-const StyledIMG = styled.img`
-    height: 10px;
-    width: 10px;
-    padding-left:10px;
-`;
+import { SectionWrapper } from '../../../utils/Styles';
+import {
+  StyledSubTitle, StyledTitle,
+  ButtonContainer, CustomButton, StyledIMG
+} from '../../../utils/Styles/ServicesStyle';
 
 function OurServices () {
   return (
 
-          <ServicesWrapper>
+          <SectionWrapper id='servicesSectionWrapper'>
             <StyledTitle>Our Services</StyledTitle>
 
             <StyledSubTitle>Companies</StyledSubTitle>
@@ -74,7 +30,7 @@ function OurServices () {
             <ButtonContainer>
                 <Link to='/BusinessServices'>
                     <CustomButton>Discover All Business Services
-                        <span><StyledIMG src={ArrowRight} alt='arrowRight'></StyledIMG></span>
+                            <StyledIMG src={ArrowRight} alt='arrowRight'></StyledIMG>
                     </CustomButton>
                 </Link>
             </ButtonContainer>
@@ -84,11 +40,11 @@ function OurServices () {
             <ButtonContainer>
                 <Link to='/IndividualServices'>
                     <CustomButton>Discover All Individual Services
-                        <span><StyledIMG src={ArrowRight} alt='arrowRight'></StyledIMG></span>
+                            <StyledIMG src={ArrowRight} alt='arrowRight'></StyledIMG>
                     </CustomButton>
                 </Link>
             </ButtonContainer>
-          </ServicesWrapper>
+          </SectionWrapper>
 
   );
 }
