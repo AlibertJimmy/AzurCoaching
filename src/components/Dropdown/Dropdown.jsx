@@ -1,48 +1,16 @@
-// Import React Component
+// Import React Libraries
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+
+// Import Function
+import { scrollToTop } from '../../utils/Functions';
 
 // Import Assets
 import ArrowDown from '../../assets/icon/arrowDown.png';
 
 // Import Style
-import styled from 'styled-components';
 import { StyledLinkDropDown, StyledSpanHeader } from '../../utils/Styles';
-import { scrollToTop } from '../../utils/Functions';
-
-// Styled components
-const DropdownContainer = styled.div`
-  
-  height: 40px;
-`;
-
-const DropdownContent = styled.div`
-  display: ${(props) => (props.open ? 'block' : 'none')};
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 200px;
-  margin-top:12px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-`;
-
-const DropdownItem = styled.div`
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #f1f1f1;
-  }
-`;
-
-const DropDownArrow = styled.img`
-  width: 10px;
-  height:10px;
-  padding:0;
-  margin:0;
-`;
+import { DropdownContainer, DropdownContent, DropdownItem, DropDownArrow } from '../../utils/Styles/DropDownStyle';
 
 function Dropdown ({ dropDownTitle, options, links, handleCloseBurger }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +22,7 @@ function Dropdown ({ dropDownTitle, options, links, handleCloseBurger }) {
   };
 
   return (
-    <DropdownContainer onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} id='dropDown'>
+    <DropdownContainer onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} id={`dropDown${dropDownTitle}`}>
       <StyledSpanHeader>{dropDownTitle}</StyledSpanHeader><DropDownArrow src={ArrowDown} alt="ArrowDown" style={{ paddingLeft: '5px' }}/>
       <DropdownContent open={isOpen}>
         {options.map((option, index) => (
