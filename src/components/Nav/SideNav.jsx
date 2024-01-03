@@ -7,13 +7,15 @@ import PropTypes from 'prop-types';
 // Import compoment
 import Dropdown from '../Dropdown/Dropdown';
 
+// Import Function
+import { scrollToTop } from '../../utils/Functions';
+
 // Import Style
 import styled from 'styled-components';
-import { StyledLink, underLineEffect } from '../../utils/Styles';
+import { NavLink, UnderLineEffect } from '../../utils/Styles/SideNavStyle';
 
 // Import constantes
 import { responsiveWidth } from '../../utils/Constant';
-import { scrollToTop } from '../../utils/Functions';
 
 const StyledUl = styled.ul`
 
@@ -52,8 +54,7 @@ const StyledUl = styled.ul`
     }
 `;
 const StyledLi = styled.li`
-    ${underLineEffect};
-
+    ${UnderLineEffect};
 `;
 
 function SideNav ({ open, handleCloseBurger }) {
@@ -68,9 +69,9 @@ function SideNav ({ open, handleCloseBurger }) {
 
   return (
         <StyledUl open={open}>
-            <StyledLi><StyledLink to="/" onClick={handleLinkClick}>Home</StyledLink></StyledLi>
+            <StyledLi><NavLink to="/" onClick={handleLinkClick}>Home</NavLink></StyledLi>
             <StyledLi><Dropdown dropDownTitle ={dropDownTitle} options={linksRender} links={links} handleCloseBurger={handleCloseBurger}/></StyledLi>
-            <StyledLi><StyledLink to="/Contact" onClick={handleLinkClick}>Contact</StyledLink></StyledLi>
+            <StyledLi><NavLink to="/Contact" onClick={handleLinkClick}>Contact</NavLink></StyledLi>
         </StyledUl>
   );
 }

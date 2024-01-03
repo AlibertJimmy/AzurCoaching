@@ -1,8 +1,19 @@
+// Import React Libraries
+import { Link } from 'react-router-dom';
+
 // Import Style
 import styled from 'styled-components';
+import { NavCommonWriting } from '../Styles';
+
+// Import Colors
+import colors from '../Colors';
 
 export const DropdownContainer = styled.div`
   height: 40px;
+`;
+
+export const DropDownTitle = styled.span`
+  ${NavCommonWriting};
 `;
 
 export const DropdownContent = styled.div`
@@ -35,4 +46,10 @@ export const DropDownArrow = styled.img`
 
   padding:0;
   margin:0;
+`;
+
+export const DropDownLink = styled(Link)`
+    ${NavCommonWriting};
+    color: ${colors.linkResponsive} ;
+    text-decoration: none;
 `;

@@ -9,8 +9,7 @@ import { scrollToTop } from '../../utils/Functions';
 import ArrowDown from '../../assets/icon/arrowDown.png';
 
 // Import Style
-import { StyledLinkDropDown, StyledSpanHeader } from '../../utils/Styles';
-import { DropdownContainer, DropdownContent, DropdownItem, DropDownArrow } from '../../utils/Styles/DropDownStyle';
+import { DropdownContainer, DropdownContent, DropdownItem, DropDownArrow, DropDownTitle, DropDownLink } from '../../utils/Styles/DropDownStyle';
 
 function Dropdown ({ dropDownTitle, options, links, handleCloseBurger }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,11 +22,11 @@ function Dropdown ({ dropDownTitle, options, links, handleCloseBurger }) {
 
   return (
     <DropdownContainer onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} id={`dropDown${dropDownTitle}`}>
-      <StyledSpanHeader>{dropDownTitle}</StyledSpanHeader><DropDownArrow src={ArrowDown} alt="ArrowDown" style={{ paddingLeft: '5px' }}/>
+      <DropDownTitle>{dropDownTitle}</DropDownTitle><DropDownArrow src={ArrowDown} alt="ArrowDown" style={{ paddingLeft: '5px' }}/>
       <DropdownContent open={isOpen}>
         {options.map((option, index) => (
           <DropdownItem key={index} >
-            <StyledLinkDropDown key={index} to={`/${links[index]}`} onClick={() => handleOptionClick(links[index])}>{option}</StyledLinkDropDown>
+            <DropDownLink key={index} to={`/${links[index]}`} onClick={() => handleOptionClick(links[index])}>{option}</DropDownLink>
           </DropdownItem>
         ))}
       </DropdownContent>
