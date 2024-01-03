@@ -29,7 +29,7 @@ export const ComponentBorder = css`
 
 const commonWriting = css`
   font-family:  sans-serif;
-  font-weight:bold;
+  font-weight: bold;
 
   @media (max-width: ${responsiveWidth}px){
     color: ${colors.linkResponsive};
@@ -105,4 +105,17 @@ export const ButtonStyle = css`
 
 export const StyledButton = styled.button`
   ${ButtonStyle};
+`;
+
+// Absolute Position Holder
+export const CommomAbsolutePositionHolder = css`
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  left: 50%;
+
+  text-align: center;
+  
+  background-color: transparent ;
 `;

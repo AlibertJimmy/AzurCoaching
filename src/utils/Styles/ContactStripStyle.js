@@ -1,5 +1,6 @@
 // Import Style
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { CommomAbsolutePositionHolder } from '../Styles';
 
 // Import Colors
 import colors from '../Colors';
@@ -21,25 +22,13 @@ export const ContactStripContainer = styled.div`
     }
 `;
 
-export const CommomContentPosition = css`
-    position: absolute;
-    transform: translate(-50%, -50%);
-
-    width: 100%;
-    left: 50%;
-
-    text-align: center;
-    
-    background-color: transparent ;
-`;
-
 export const AbsoluteContainer1 = styled.div`
-    ${CommomContentPosition};
+    ${CommomAbsolutePositionHolder};
     top: 25%;
 `;
 
 export const AbsoluteContainer2 = styled.div`
-    ${CommomContentPosition};
+    ${CommomAbsolutePositionHolder};
     top: 75%;
 `;
 
