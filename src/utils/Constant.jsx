@@ -1,5 +1,6 @@
 // Responsive Design
 export const responsiveWidth = 990;
+export const responsiveWidthMobile = 450;
 
 // General Margin
 export const verticalMargin = 20;

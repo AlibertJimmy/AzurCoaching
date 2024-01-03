@@ -4,7 +4,9 @@ import { StyledButton } from '../Styles';
 
 // Import Colors
 import colors from '../Colors';
-import { responsiveWidth } from '../Constant';
+
+// Import Constants
+import { responsiveWidth, responsiveWidthMobile } from '../Constant';
 
 // Titlte Related
 export const CommonTitle = css`
@@ -52,7 +54,7 @@ export const StyledIMG = styled.img`
   padding-left:10px;
 `;
 
-// Services Related
+// Services Home Related
 export const ServiceWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -101,4 +103,108 @@ export const IconIMG = styled.img`
 export const ServiceContentContainer = styled.div`
     display:flex;
     flex-direction:column;
+`;
+
+// Service Detail Related
+
+export const ServiceDetailWrapper = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+
+    position: relative;
+    padding: 50px 0;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+        width: 33%; 
+        border-bottom: 1px solid ${colors.bluePastel}; 
+      }
+
+    &:last-child {
+        &:before {
+            content: none; 
+        }
+    }
+    
+    @media (max-width: ${responsiveWidthMobile}px){
+        flex-direction:column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+`;
+
+export const ServiceDetailTitleContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width:300px;
+
+`;
+
+export const ServiceDetailTitle = styled.h1`
+    font-size:25px;
+    font-weight:bold;
+    font-family: sans-serif;
+
+
+    color: ${colors.bluePastel};
+
+    position: relative;
+    display: inline-block;
+
+    margin: 0;
+
+    width: fit-content;
+    height: 40px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        width: 50%;
+        border-bottom: 2px solid ${colors.bluePastel}; 
+    }
+
+    @media (max-width: ${responsiveWidthMobile}px){
+        &:before {
+             
+        }
+    }
+`;
+
+export const ServiceDetailDescriptionContainer = styled.div`
+    display:flex;
+    flex-direction:column;
+
+    width: 600px;
+
+    @media (max-width: ${responsiveWidth}px){
+        width:300px;
+    }
+`;
+
+export const ServiceDetailDescriptionUl = styled.ul`
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        position: relative;
+        display: flex;
+
+        &::before {
+            content: "\\2714";
+            margin-right: 1.5em; 
+
+            @media (max-width: ${responsiveWidth}px){
+                margin-right: 0.55em; 
+            }
+        }
+    }
 `;
