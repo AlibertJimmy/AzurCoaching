@@ -7,10 +7,12 @@ import PropTypes from 'prop-types';
 
 // Import Component
 import Burger from './BurgerButton';
-import Logo from './Logo/Logo';
 
 // Import Functions
 import { scrollToTop } from '../../utils/Functions';
+
+//  Import Asset
+import LogoPNG from '../../assets/logo/Azur_Logo.png';
 
 // Import Style
 import styled from 'styled-components';
@@ -42,6 +44,11 @@ const StyledNav = styled(BaseNav)`
     color: ${({ isScrolled }) => (isScrolled ? 'black' : 'white')};
 `;
 
+const Logo = styled.img`
+    width: ${navHeight * 2}px;
+    height: ${navHeight}px;
+`;
+
 function Navbar () {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -68,7 +75,7 @@ function Navbar () {
 
   return (
         <StyledNav isScrolled={isScrolled}>
-            <Link to='/' onClick={scrollToTop}><Logo/></Link>
+            <Link to='/' onClick={scrollToTop}><Logo src={LogoPNG} alt='Logo'/></Link>
             <Burger/>
         </StyledNav>
   );
