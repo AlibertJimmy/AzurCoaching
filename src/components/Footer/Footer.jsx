@@ -1,12 +1,12 @@
 // Import React Libraries
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 // Import Component
 import CopyEmailLink from '../Mail/Mail';
 
 // Import Assets
-import ArrowUp from '../../assets/icon/arrowUp.png';
 import Mail from '../../assets/icon/Mail.png';
 import Tel from '../../assets/icon/Tel.png';
 import AzurLogo from '../../assets/logo/Azur_Logo.png';
@@ -16,7 +16,7 @@ import LinkedInBlack from '../../assets/icon/LinkedIn_Black.png';
 import {
   FooterWrapper, FooterContainer,
   TextContainer, StyledP,
-  SideContainer, StyledButton, StyledImgArrowUp
+  SideContainer, FooterButton, FooterIcon
 } from '../../utils/Styles/FooterStyle';
 
 function Footer () {
@@ -56,9 +56,9 @@ function Footer () {
             </TextContainer>
         </FooterContainer>
         <SideContainer>
-            <StyledButton id="goToTopButton" onClick={handleGoToTop}>
-                <StyledImgArrowUp src={ArrowUp} alt='arrowUp'></StyledImgArrowUp>
-            </StyledButton>
+            <FooterButton id="scrollToTopButton" onClick={handleGoToTop}>
+              <FooterIcon icon={faChevronUp}/>
+            </FooterButton>
         </SideContainer>
     </FooterWrapper>
   );

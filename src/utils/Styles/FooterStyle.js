@@ -1,3 +1,6 @@
+// Import React Libraries
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 // Import Style
 import styled from 'styled-components';
 
@@ -53,17 +56,27 @@ export const SideContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-end;
 
-  width:60px;
+  width: 60px;
 
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
-export const StyledButton = styled.button`
-      margin:0;
-      padding:0;
+export const FooterButton = styled.button`
+  width: 35px;
+  height: 35px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
 `;
 
-export const StyledImgArrowUp = styled.img`
-    height: 20px; 
-    width: 20px;
+// Icon
+export const FooterIcon = styled(FontAwesomeIcon)`
+  width: 30px;
+  height: 30px;
+  color: black;
 `;
