@@ -186,6 +186,7 @@ function ContactForm () {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
+                    style={{ height: '110px' }}
                     />
                     <span className="error">{formErrors.message}</span>
                 </FormFieldWrapper>

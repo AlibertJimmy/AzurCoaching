@@ -8,6 +8,7 @@ import { NavCommonWriting } from '../Styles';
 // Import Colors
 import colors from '../Colors';
 
+// NavBar Related
 export const UnderLineEffect = css`
     display: inline-block;
     height: 40px;
@@ -30,6 +31,7 @@ export const UnderLineEffect = css`
     }
 `;
 
+// Link Related
 export const NavLink = styled(Link)`
   ${NavCommonWriting};
   text-decoration: none;

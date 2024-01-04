@@ -13,7 +13,7 @@ import colors from '../../utils/Colors';
 
 // Import Constante
 import { responsiveWidth } from '../../utils/Constant';
-
+// border: ${({ open }) => (open ? `1px solid ${colors.burgerDivOpen}` : `1px solid ${colors.burgerDiv}`)};
 const StyledBurger = styled.div`
     width: 2rem;
     height: 2rem;
@@ -22,7 +22,7 @@ const StyledBurger = styled.div`
     top: 10px;
     right: 15px;
     
-    border: ${({ open }) => (open ? `1px solid ${colors.burgerDivOpen}` : `1px solid ${colors.burgerDiv}`)};
+    border: none;
 
     border-radius: 5px;
     padding: 2px;

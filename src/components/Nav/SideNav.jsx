@@ -12,7 +12,7 @@ import { scrollToTop } from '../../utils/Functions';
 
 // Import Style
 import styled from 'styled-components';
-import { NavLink, UnderLineEffect } from '../../utils/Styles/SideNavStyle';
+import { NavLink, UnderLineEffect } from '../../utils/Styles/NavStyle';
 
 // Import constantes
 import { responsiveWidth } from '../../utils/Constant';
@@ -55,6 +55,7 @@ const StyledUl = styled.ul`
 `;
 const StyledLi = styled.li`
     ${UnderLineEffect};
+    border: 1px solid red;
 `;
 
 function SideNav ({ open, handleCloseBurger }) {
