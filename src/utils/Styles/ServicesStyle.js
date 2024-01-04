@@ -7,6 +7,7 @@ import colors from '../Colors';
 
 // Import Constants
 import { responsiveWidth, responsiveWidthMobile } from '../Constant';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Titlte Related
 export const CommonTitle = css`
@@ -35,23 +36,27 @@ export const ButtonContainer = styled.div`
   width: 100%;
 `;
 
-export const CustomButton = styled(StyledButton)`
+// Icon
+export const ServiceIcon = styled(FontAwesomeIcon)`
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+`;
+
+export const ServiceButton = styled(StyledButton)`
+  display: flex;
+  align-items: center;
+
   
-    img {
+    ${ServiceIcon} {
         display: none;
     }    
 
     &:hover {
-      img {
+      ${ServiceIcon} {
           display: inline;
       }
     }
-`;
-
-export const StyledIMG = styled.img`
-  height: 10px;
-  width: 10px;
-  padding-left:10px;
 `;
 
 // Services Home Related
@@ -179,8 +184,8 @@ export const ServiceDetailTitle = styled.h1`
 `;
 
 export const ServiceDetailDescriptionContainer = styled.div`
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
 
     width: 600px;
 
