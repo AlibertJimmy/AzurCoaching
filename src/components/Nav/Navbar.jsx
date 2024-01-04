@@ -2,9 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// Import PropTypes
-import PropTypes from 'prop-types';
-
 // Import Component
 import Burger from './BurgerButton';
 
@@ -15,39 +12,7 @@ import { scrollToTop } from '../../utils/Functions';
 import LogoPNG from '../../assets/logo/Azur_Logo.png';
 
 // Import Style
-import styled from 'styled-components';
-
-// Import Constants
-import { navHeight } from '../../utils/Constant';
-
-const BaseNav = ({ className, children }) => <nav className={className}>{children}</nav>;
-
-BaseNav.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired
-};
-
-const StyledNav = styled(BaseNav)`
-    position: fixed;
-    top:0;
-    width:100%;
-    height: ${navHeight}px;
-
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    z-index: 9999;
-    
-    transition: background-color 0.3s ease;
-
-    background-color: ${({ isScrolled }) => (isScrolled ? 'white' : 'transparent')};
-    color: ${({ isScrolled }) => (isScrolled ? 'black' : 'white')};
-`;
-
-const Logo = styled.img`
-    width: ${navHeight * 2}px;
-    height: ${navHeight}px;
-`;
+import { StyledNav, Logo } from '../../utils/Styles/NavStyle';
 
 function Navbar () {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -74,7 +39,7 @@ function Navbar () {
   }, []);
 
   return (
-        <StyledNav isScrolled={isScrolled}>
+        <StyledNav isScrolled={isScrolled} id='navBar'>
             <Link to='/' onClick={scrollToTop}><Logo src={LogoPNG} alt='Logo'/></Link>
             <Burger/>
         </StyledNav>

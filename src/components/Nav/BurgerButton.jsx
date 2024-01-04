@@ -8,64 +8,7 @@ import PropTypes from 'prop-types';
 import SideNav from './SideNav';
 
 // Import Style
-import styled from 'styled-components';
-import colors from '../../utils/Colors';
-
-// Import Constante
-import { responsiveWidth } from '../../utils/Constant';
-// border: ${({ open }) => (open ? `1px solid ${colors.burgerDivOpen}` : `1px solid ${colors.burgerDiv}`)};
-const StyledBurger = styled.div`
-    width: 2rem;
-    height: 2rem;
-
-    position: fixed;
-    top: 10px;
-    right: 15px;
-    
-    border: none;
-
-    border-radius: 5px;
-    padding: 2px;
-
-    z-index: 20;
-
-    display: none;
-
-    @media (max-width: ${responsiveWidth}px){
-        display: flex;
-        justify-content: space-around;
-        flex-flow: column nowrap;
-        border-color: black;
-    }
-
-    div{
-        
-        height: 0.25rem;
-        border-radius: 10px;
-        
-        transform-origin: 1px;
-
-        &:nth-child(1){
-            transform: ${({ open }) => open ? 'translate(14%) rotate(45deg)' : 'translate(0) rotate(0)'};
-        }
-
-        &:nth-child(2){
-            transform: ${({ open }) => open ? 'translate(100%)' : 'translate(0)'};
-            opacity: ${({ open }) => open ? 0 : 1};
-        }
-
-        &:nth-child(3){
-            transform: ${({ open }) => open ? 'translate(14%) rotate(-45deg)' : 'translate(0) rotate(0)'};
-        }
-
-        background-color: ${({ open }) => open ? colors.burgerDivOpen : colors.burgerDiv};
-        
-        @media (max-width: ${responsiveWidth}px){
-            background-color: black;
-        }
-
-    }
-`;
+import { StyledBurger } from '../../utils/Styles/NavStyle';
 
 export const sideNavPropsType = PropTypes.shape({
   open: PropTypes.bool.isRequired,
