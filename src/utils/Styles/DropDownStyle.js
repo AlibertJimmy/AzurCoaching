@@ -1,5 +1,6 @@
 // Import React Libraries
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Import Style
 import styled from 'styled-components';
@@ -10,6 +11,11 @@ import colors from '../Colors';
 
 export const DropdownContainer = styled.div`
   height: 40px;
+`;
+
+export const DropDownTitleContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const DropDownTitle = styled.span`
@@ -40,14 +46,15 @@ export const DropdownItem = styled.div`
   }
 `;
 
-export const DropDownArrow = styled.img`
+// Icon
+export const DropDownIcon = styled(FontAwesomeIcon)`
   width: 10px;
   height: 10px;
-
-  padding:0;
-  margin:0;
+  color: black;
+  margin-left: 5px;
 `;
 
+// Link
 export const DropDownLink = styled(Link)`
     ${NavCommonWriting};
     color: ${colors.linkResponsive} ;

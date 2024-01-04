@@ -1,15 +1,19 @@
 // Import React Libraries
 import React, { useState } from 'react';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
+// Import PropTypes
 import PropTypes from 'prop-types';
 
 // Import Function
 import { scrollToTop } from '../../utils/Functions';
 
-// Import Assets
-import ArrowDown from '../../assets/icon/arrowDown.png';
-
 // Import Style
-import { DropdownContainer, DropdownContent, DropdownItem, DropDownArrow, DropDownTitle, DropDownLink } from '../../utils/Styles/DropDownStyle';
+import {
+  DropdownContainer,
+  DropDownTitleContainer, DropDownTitle, DropDownIcon,
+  DropdownContent, DropdownItem, DropDownLink
+} from '../../utils/Styles/DropDownStyle';
 
 function Dropdown ({ dropDownTitle, options, links, handleCloseBurger }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +26,7 @@ function Dropdown ({ dropDownTitle, options, links, handleCloseBurger }) {
 
   return (
     <DropdownContainer onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} id={`dropDown${dropDownTitle}`}>
-      <DropDownTitle>{dropDownTitle}</DropDownTitle><DropDownArrow src={ArrowDown} alt="ArrowDown" style={{ paddingLeft: '5px' }}/>
+      <DropDownTitleContainer><DropDownTitle>{dropDownTitle}</DropDownTitle><DropDownIcon icon={faChevronDown}/></DropDownTitleContainer>
       <DropdownContent open={isOpen}>
         {options.map((option, index) => (
           <DropdownItem key={index} >
