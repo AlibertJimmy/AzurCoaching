@@ -20,8 +20,13 @@ export const TopIllustrationWrapper = styled.div`
 
 export const AbsolutePositionContainer = styled.div`
   ${CommomAbsolutePositionHolder};
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
   top:50%;
   height: 300px;
+
   @media (max-width: ${responsiveWidth}px) {
     height: 175px;
   }

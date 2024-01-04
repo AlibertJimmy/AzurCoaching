@@ -30,7 +30,7 @@ function HomeIllustration () {
 
   return (
             <TopIllustrationWrapper id='topHomeIllustrationWrapper'>
-                <AbsolutePositionContainer id='scrollingStripContainer'>
+                <AbsolutePositionContainer id='absolutePositionContainer'>
                     <HomeTopTitle>Azur</HomeTopTitle>
 
                     <ScrollingStrip datas={homeTitles} customStyle={customStyle}/>
