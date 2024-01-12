@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import MailWhite from '../../assets/icon/Mail_White.png';
 import {
   FormInputWrapper, FormInputContainer, FormFieldWrapper, FormInput,
-  StyledIMG
+  ContactIMG
 } from '../../utils/Styles/ContactStyle';
 import { StyledButton } from '../../utils/Styles';
 
@@ -193,7 +193,7 @@ function ContactForm () {
             </FormInputContainer>
         </FormInputWrapper>
         <div style={{ marginLeft: '10px' }}>
-            <StyledButton type="submit"><span><StyledIMG src={MailWhite} alt='Mail'></StyledIMG></span>Send the Message</StyledButton>
+            <StyledButton type="submit"><span><ContactIMG src={MailWhite} alt='Mail'/></span>Send the Message</StyledButton>
         </div>
     </form>
   );

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { format } from 'date-fns';
 
 // Import Component
 import CopyEmailLink from '../Mail/Mail';
@@ -15,11 +16,12 @@ import LinkedInBlack from '../../assets/icon/LinkedIn_Black.png';
 // Import Style
 import {
   FooterWrapper, FooterContainer,
-  TextContainer, StyledP,
+  TextContainer, FooterP,
   SideContainer, FooterButton, FooterIcon
 } from '../../utils/Styles/FooterStyle';
 
 function Footer () {
+  const currentYear = format(new Date(), 'yyyy');
   const mailPopUpStyle = {
     fontFamily: 'sans-serif',
     backgroundColor: 'white',
@@ -37,22 +39,22 @@ function Footer () {
         <FooterContainer>
             <img src={AzurLogo} alt='Azur_Logo' style={{ height: '100px', width: '200px' }}/>
             <TextContainer>
-                <StyledP style={{ fontSize: '20px', fontWeight: 'bold', textTransform: 'uppercase' }}>Follow Us</StyledP>
+                <FooterP style={{ fontSize: '20px', fontWeight: 'bold', textTransform: 'uppercase' }}>Follow Us</FooterP>
                 <Link><img src={LinkedInBlack} alt='LinkedIn_Black' style={{ height: '30px', width: '30px' }}/></Link>
             </TextContainer>
             <TextContainer>
                 <img src={Mail} alt='Mail' style={{ height: '20px', width: '20px' }}/>
-                <StyledP><CopyEmailLink email={'Mymail@gmail.com'} style={mailPopUpStyle}/></StyledP>
+                <FooterP><CopyEmailLink email={'Mymail@gmail.com'} style={mailPopUpStyle}/></FooterP>
             </TextContainer>
             <TextContainer>
                 <img src={Tel} alt='Tel' style={{ height: '20px', width: '20px' }}/>
-                <StyledP>Phone Number</StyledP>
+                <FooterP>Phone Number</FooterP>
             </TextContainer>
             <TextContainer>
-                <StyledP>TVA</StyledP>
+                <FooterP>TVA</FooterP>
             </TextContainer>
             <TextContainer>
-                <StyledP>Copyright 2023 © Azur.</StyledP>
+                <FooterP>Copyright © {currentYear} All rights reserved.</FooterP>
             </TextContainer>
         </FooterContainer>
         <SideContainer>

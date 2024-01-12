@@ -84,7 +84,7 @@ export const FormInput = styled.input`
   }
 `;
 
-export const StyledIMG = styled.img`
+export const ContactIMG = styled.img`
   width: 15px;
   height:15px;
   padding-right: 10px;

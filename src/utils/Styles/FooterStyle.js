@@ -44,7 +44,7 @@ export const TextContainer = styled.div`
   align-items: center;
 `;
 
-export const StyledP = styled.p`
+export const FooterP = styled.p`
   font-family: sans-serif;
   font-size: 15px;
 
